@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap")
+layer(base);
+@import "tailwindcss";
+
+@theme {
+  --color-paisa-gold: #c4a135;
+  --color-paisa-blue: #0f2d4a;
+  --color-paisa-light-blue: #1a3a5c;
+  --color-paisa-cream: #faf8f3;
+
+  --font-outfit: Outfit, sans-serif;
+
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: slideUp 0.6s ease-out;
+  --animate-scale-in: scaleIn 0.4s ease-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility btn-primary {
+  @apply bg-paisa-gold hover:bg-paisa-gold/90 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+}
+
+@utility btn-secondary {
+  @apply bg-white border-2 border-paisa-blue text-paisa-blue hover:bg-paisa-blue hover:text-white font-medium py-3 px-6 rounded-lg transition-all duration-200;
+}
+
+@utility card {
+  @apply bg-white rounded-xl shadow-xs hover:shadow-md transition-all duration-200 border border-gray-100;
+}
+
+@utility badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+}
+
+@utility badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+@utility badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+@utility badge-info {
+  @apply bg-blue-100 text-blue-800;
+}
+
+@layer utilities {
+  * {
+    font-family: "Outfit", sans-serif;
+  }
+}
