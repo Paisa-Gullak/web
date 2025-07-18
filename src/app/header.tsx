@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, HelpCircle } from "lucide-react";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,12 +26,12 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-paisa-gold rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">P</span>
-            </div>
-            <span className="text-xl font-semibold text-paisa-blue">
-              Paisa Gullak
-            </span>
+            <Image
+              src="/pg-logo.svg"
+              alt="Paisa Gullak Logo"
+              width={200}
+              height={60}
+            />
           </Link>
 
           {/* Desktop Navigation */}

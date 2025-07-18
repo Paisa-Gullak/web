@@ -8,7 +8,7 @@ import { Geist } from "next/font/google";
 export const metadata: Metadata = {
   title: "Paisa Gullak",
   description: "Paisa Gullak",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/pg-favicon.ico" }],
 };
 
 const geist = Geist({

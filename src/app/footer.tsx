@@ -9,6 +9,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -18,10 +19,16 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-paisa-gold rounded-full flex items-center justify-center">
+              <Image
+                src="/pg-logo-white.svg"
+                alt="Paisa Gullak Logo"
+                width={200}
+                height={50}
+              />
+              {/* <div className="w-10 h-10 bg-paisa-gold rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">P</span>
               </div>
-              <span className="text-xl font-semibold">Paisa Gullak</span>
+              <span className="text-xl font-semibold">Paisa Gullak</span> */}
             </div>
             <p className="text-gray-300 mb-4">
               Making investing simple and accessible for the new generation of
