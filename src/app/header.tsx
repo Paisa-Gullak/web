@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, HelpCircle } from "lucide-react";
+import { IconHelpCircle, IconX, IconMenu } from "@tabler/icons-react";
 import Image from "next/image";
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
     { path: "/mutual-funds", label: "Mutual Funds" },
     { path: "/insurance", label: "Insurance" },
     { path: "/about", label: "About Us" },
-    { path: "/contact", label: "Contact" },
+    { path: "/contact", label: "Contact Us" },
   ];
 
   return (
@@ -35,7 +35,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -52,9 +52,9 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <button className="flex items-center space-x-2 text-paisa-blue hover:text-paisa-gold transition-colors duration-200">
-              <HelpCircle size={20} />
+              <IconHelpCircle size={20} />
               <span className="font-medium">Talk to Expert</span>
             </button>
             <button className="btn-primary">Start Investing</button>
@@ -62,16 +62,16 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <IconX size={24} /> : <IconMenu size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4 animate-fade-in">
+          <div className="lg:hidden border-t border-gray-200 py-4 animate-fade-in">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
@@ -89,7 +89,7 @@ const Header = () => {
               ))}
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                 <button className="flex items-center space-x-2 text-paisa-blue hover:text-paisa-gold transition-colors duration-200">
-                  <HelpCircle size={20} />
+                  <IconHelpCircle size={20} />
                   <span className="font-medium">Talk to Expert</span>
                 </button>
                 <button className="btn-primary w-full">Start Investing</button>

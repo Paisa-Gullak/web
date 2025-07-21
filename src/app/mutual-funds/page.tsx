@@ -2,16 +2,16 @@
 
 import React, { useState } from "react";
 import {
-  TrendingUp,
-  Filter,
-  Search,
-  Star,
-  ArrowRight,
-  BarChart3,
-  Target,
-  Shield,
-  Calendar,
-} from "lucide-react";
+  IconTrendingUp,
+  IconSearch,
+  IconFilter,
+  IconStar,
+  IconChartHistogram,
+  IconTargetArrow,
+  IconShield,
+  IconCalendarClock,
+  IconArrowRight,
+} from "@tabler/icons-react";
 
 const MutualFundsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -192,7 +192,7 @@ const MutualFundsPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="btn-primary flex items-center justify-center space-x-2">
-                <TrendingUp size={20} />
+                <IconTrendingUp size={20} />
                 <span>Start SIP Now</span>
               </button>
               <button className="btn-secondary">Need Help Choosing?</button>
@@ -258,7 +258,7 @@ const MutualFundsPage = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
-              <Search
+              <IconSearch
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
                 size={20}
               />
@@ -274,7 +274,7 @@ const MutualFundsPage = () => {
             {/* Filters */}
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center space-x-2">
-                <Filter size={20} className="text-gray-500" />
+                <IconFilter size={20} className="text-gray-500" />
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
@@ -309,7 +309,7 @@ const MutualFundsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {filteredFunds.map((fund, index) => (
               <div
-                key={fund.id}
+                key={index}
                 className="card p-6 hover:shadow-lg transition-all duration-200 animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -324,7 +324,7 @@ const MutualFundsPage = () => {
                     <div className="flex items-center space-x-2 mb-3">
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <Star
+                          <IconStar
                             key={i}
                             size={14}
                             className={
@@ -385,7 +385,7 @@ const MutualFundsPage = () => {
                 <div className="flex gap-3">
                   <button className="btn-primary flex-1 flex items-center justify-center space-x-2">
                     <span>Start SIP</span>
-                    <ArrowRight size={16} />
+                    <IconArrowRight size={16} />
                   </button>
                   <button className="btn-secondary px-4">View Details</button>
                 </div>
@@ -427,7 +427,7 @@ const MutualFundsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center animate-slide-up">
               <div className="w-16 h-16 bg-paisa-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="text-paisa-gold" size={32} />
+                <IconChartHistogram className="text-paisa-gold" size={32} />
               </div>
               <h3 className="text-lg font-semibold text-paisa-blue mb-3">
                 SIP (Systematic Investment Plan)
@@ -439,7 +439,7 @@ const MutualFundsPage = () => {
             </div>
             <div className="text-center animate-slide-up">
               <div className="w-16 h-16 bg-paisa-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="text-paisa-gold" size={32} />
+                <IconTargetArrow className="text-paisa-gold" size={32} />
               </div>
               <h3 className="text-lg font-semibold text-paisa-blue mb-3">
                 Asset Allocation
@@ -451,7 +451,7 @@ const MutualFundsPage = () => {
             </div>
             <div className="text-center animate-slide-up">
               <div className="w-16 h-16 bg-paisa-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="text-paisa-gold" size={32} />
+                <IconShield className="text-paisa-gold" size={32} />
               </div>
               <h3 className="text-lg font-semibold text-paisa-blue mb-3">
                 Risk Management
@@ -463,7 +463,7 @@ const MutualFundsPage = () => {
             </div>
             <div className="text-center animate-slide-up">
               <div className="w-16 h-16 bg-paisa-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calendar className="text-paisa-gold" size={32} />
+                <IconCalendarClock className="text-paisa-gold" size={32} />
               </div>
               <h3 className="text-lg font-semibold text-paisa-blue mb-3">
                 Long-term Investing

@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-} from "lucide-react";
+  IconBrandFacebook,
+  IconBrandX,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconMail,
+  IconPhone,
+  IconMapPin,
+} from "@tabler/icons-react";
 import Image from "next/image";
 
 const Footer = () => {
@@ -35,30 +35,30 @@ const Footer = () => {
               investors.
             </p>
             <div className="flex space-x-4">
-              <a
+              <Link
                 href="#"
                 className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
               >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="#"
+                <IconBrandFacebook size={20} />
+              </Link>
+              <Link
+                href="https://x.com/paisagullak"
                 className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
               >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
+                <IconBrandX size={20} />
+              </Link>
+              <Link
+                href="https://www.instagram.com/paisagullak/"
                 className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
               >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
+                <IconBrandInstagram size={22} />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/paisa-gullak/"
+                className="text-gray-300 mt-[1.2px] hover:text-paisa-gold transition-colors duration-200"
               >
-                <Linkedin size={20} />
-              </a>
+                <IconBrandLinkedin size={20} />
+              </Link>
             </div>
           </div>
 
@@ -145,16 +145,16 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-paisa-gold" />
-                <span className="text-gray-300">hello@paisagullak.com</span>
+                <IconMail size={16} className="text-paisa-gold" />
+                <span className="text-gray-300">paisagullak@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-paisa-gold" />
-                <span className="text-gray-300">+91 98765 43210</span>
+                <IconPhone size={16} className="text-paisa-gold" />
+                <span className="text-gray-300">+91 600-541-1368</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin size={16} className="text-paisa-gold" />
-                <span className="text-gray-300">Mumbai, India</span>
+                <IconMapPin size={16} className="text-paisa-gold" />
+                <span className="text-gray-300">Jammu, J&K, India</span>
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@ const Footer = () => {
 
         <div className="border-t border-paisa-light-blue mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © 2024 Paisa Gullak. All rights reserved. |
+            © 2025 Paisa Gullak. All rights reserved. |
             <a
               href="#"
               className="hover:text-paisa-gold transition-colors duration-200 ml-1"

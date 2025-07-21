@@ -1,37 +1,41 @@
 import React from "react";
 import Link from "next/link";
 import {
-  TrendingUp,
-  Shield,
-  Users,
-  Award,
-  Star,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+  IconArrowRight,
+  IconCircleCheck,
+  IconTrendingUp,
+  IconShield,
+  IconUsers,
+  IconAward,
+  IconStarFilled,
+} from "@tabler/icons-react";
 
 const HomePage = () => {
   const features = [
     {
-      icon: <TrendingUp className="text-paisa-gold" size={32} />,
+      id: 1,
+      icon: <IconTrendingUp className="text-paisa-gold" size={32} />,
       title: "Smart Investing",
       description:
         "AI-powered recommendations tailored for beginners with clear guidance at every step.",
     },
     {
-      icon: <Shield className="text-paisa-gold" size={32} />,
+      id: 2,
+      icon: <IconShield className="text-paisa-gold" size={32} />,
       title: "Secure & Regulated",
       description:
         "SEBI regulated platform with bank-grade security to protect your investments.",
     },
     {
-      icon: <Users className="text-paisa-gold" size={32} />,
+      id: 3,
+      icon: <IconUsers className="text-paisa-gold" size={32} />,
       title: "Expert Support",
       description:
         "24/7 access to certified financial advisors who speak your language.",
     },
     {
-      icon: <Award className="text-paisa-gold" size={32} />,
+      id: 4,
+      icon: <IconAward className="text-paisa-gold" size={32} />,
       title: "Beginner Friendly",
       description:
         "Start with as little as ₹500. No jargon, just simple investment solutions.",
@@ -89,21 +93,21 @@ const HomePage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="btn-primary flex items-center justify-center space-x-2">
                   <span>Start Investing Now</span>
-                  <ArrowRight size={20} />
+                  <IconArrowRight size={20} />
                 </button>
                 <button className="btn-secondary">Talk to Expert</button>
               </div>
               <div className="flex items-center space-x-6 mt-8 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span>No Hidden Fees</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span>SEBI Regulated</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span>Start with ₹500</span>
                 </div>
               </div>
@@ -175,11 +179,11 @@ const HomePage = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <div
-                key={index}
+                key={feature.id}
                 className="card p-6 text-center animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${feature.id * 0.1}s` }}
               >
                 <div className="mb-4 flex justify-center">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-paisa-blue mb-3">
@@ -207,7 +211,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="card p-8 animate-slide-up">
               <div className="flex items-center mb-6">
-                <TrendingUp className="text-paisa-gold mr-4" size={40} />
+                <IconTrendingUp className="text-paisa-gold mr-4" size={40} />
                 <div>
                   <h3 className="text-2xl font-semibold text-paisa-blue">
                     Mutual Funds
@@ -221,17 +225,17 @@ const HomePage = () => {
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span className="text-gray-700">
                     Equity, Debt & Hybrid Options
                   </span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span className="text-gray-700">Tax Saving ELSS Funds</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span className="text-gray-700">Expert Portfolio Review</span>
                 </li>
               </ul>
@@ -240,13 +244,13 @@ const HomePage = () => {
                 className="btn-primary inline-flex items-center space-x-2"
               >
                 <span>Explore Mutual Funds</span>
-                <ArrowRight size={16} />
+                <IconArrowRight size={18} />
               </Link>
             </div>
 
             <div className="card p-8 animate-slide-up">
               <div className="flex items-center mb-6">
-                <Shield className="text-paisa-gold mr-4" size={40} />
+                <IconShield className="text-paisa-gold mr-4" size={40} />
                 <div>
                   <h3 className="text-2xl font-semibold text-paisa-blue">
                     Insurance
@@ -260,15 +264,15 @@ const HomePage = () => {
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span className="text-gray-700">Term & Health Insurance</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span className="text-gray-700">Investment-Linked Plans</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-500" />
+                  <IconCircleCheck size={20} className="text-green-500" />
                   <span className="text-gray-700">Quick Claim Settlement</span>
                 </li>
               </ul>
@@ -277,7 +281,7 @@ const HomePage = () => {
                 className="btn-primary inline-flex items-center space-x-2"
               >
                 <span>Explore Insurance</span>
-                <ArrowRight size={16} />
+                <IconArrowRight size={18} />
               </Link>
             </div>
           </div>
@@ -305,7 +309,7 @@ const HomePage = () => {
               >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
+                    <IconStarFilled
                       key={i}
                       size={16}
                       className="fill-paisa-gold text-paisa-gold"

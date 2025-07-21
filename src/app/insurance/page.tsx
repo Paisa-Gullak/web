@@ -2,24 +2,29 @@
 
 import React, { useState } from "react";
 import {
-  Shield,
-  Heart,
-  CheckCircle,
-  ArrowRight,
-  Calculator,
-  Users,
-  Award,
-  Zap,
-} from "lucide-react";
+  IconShield,
+  IconYinYangFilled,
+  IconTax,
+  IconBolt,
+  IconCircleCheck,
+  IconHeartbeat,
+  IconHeart,
+  IconTrendingUp,
+  IconArrowRight,
+} from "@tabler/icons-react";
 
 const InsurancePage = () => {
   const [selectedTab, setSelectedTab] = useState("life");
 
   const insuranceTypes = [
-    { id: "life", name: "Life Insurance", icon: <Shield size={20} /> },
-    { id: "health", name: "Health Insurance", icon: <Heart size={20} /> },
-    { id: "term", name: "Term Insurance", icon: <Users size={20} /> },
-    { id: "investment", name: "Investment Plans", icon: <Award size={20} /> },
+    { id: "life", name: "Life Insurance", icon: <IconHeartbeat size={20} /> },
+    { id: "health", name: "Health Insurance", icon: <IconHeart size={20} /> },
+    { id: "term", name: "Term Insurance", icon: <IconShield size={20} /> },
+    {
+      id: "investment",
+      name: "Investment Plans",
+      icon: <IconTrendingUp size={20} />,
+    },
   ];
 
   const lifePlans = [
@@ -211,25 +216,25 @@ const InsurancePage = () => {
 
   const benefits = [
     {
-      icon: <Shield className="text-paisa-gold" size={32} />,
+      icon: <IconShield className="text-paisa-gold" size={32} />,
       title: "Financial Security",
       description:
         "Protect your family's financial future against unexpected events and ensure their lifestyle continues.",
     },
     {
-      icon: <Heart className="text-paisa-gold" size={32} />,
+      icon: <IconYinYangFilled className="text-paisa-gold" size={32} />,
       title: "Peace of Mind",
       description:
         "Sleep peacefully knowing your loved ones are financially protected in your absence.",
     },
     {
-      icon: <Calculator className="text-paisa-gold" size={32} />,
+      icon: <IconTax className="text-paisa-gold" size={32} />,
       title: "Tax Benefits",
       description:
         "Save taxes under Section 80C, 80D and other provisions while securing your future.",
     },
     {
-      icon: <Zap className="text-paisa-gold" size={32} />,
+      icon: <IconBolt className="text-paisa-gold" size={32} />,
       title: "Quick Claims",
       description:
         "Fast and hassle-free claim settlement process with 98% claim settlement ratio.",
@@ -261,7 +266,7 @@ const InsurancePage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="btn-primary flex items-center justify-center space-x-2">
-                <Shield size={20} />
+                <IconShield size={20} />
                 <span>Get Instant Quote</span>
               </button>
               <button className="btn-secondary">Compare Plans</button>
@@ -394,7 +399,7 @@ const InsurancePage = () => {
                 <div className="space-y-2 mb-6">
                   {plan.features.map((feature, i) => (
                     <div key={i} className="flex items-center space-x-2">
-                      <CheckCircle
+                      <IconCircleCheck
                         size={16}
                         className="text-green-500 flex-shrink-0"
                       />
@@ -417,7 +422,7 @@ const InsurancePage = () => {
                 <div className="flex gap-3">
                   <button className="btn-primary flex-1 flex items-center justify-center space-x-2">
                     <span>Get Quote</span>
-                    <ArrowRight size={16} />
+                    <IconArrowRight size={16} />
                   </button>
                   <button className="btn-secondary px-4">Details</button>
                 </div>
@@ -577,14 +582,13 @@ const InsurancePage = () => {
                 className="flex items-center space-x-3 animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CheckCircle className="text-paisa-gold" size={20} />
+                <IconCircleCheck className="text-paisa-gold" size={22} />
                 <span className="text-gray-700 font-medium">{reason}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-paisa-blue text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

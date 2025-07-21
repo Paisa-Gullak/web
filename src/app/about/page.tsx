@@ -1,27 +1,38 @@
-import { Target, Eye, Users, Award, TrendingUp, Heart } from "lucide-react";
+import {
+  IconTargetArrow,
+  IconTelescope,
+  IconUsersGroup,
+  IconTrendingUp,
+  IconCertificate,
+  IconHeart,
+} from "@tabler/icons-react";
 
 const AboutPage = () => {
   const values = [
     {
-      icon: <Heart className="text-paisa-gold" size={32} />,
+      id: 1,
+      icon: <IconHeart className="text-paisa-gold" size={32} />,
       title: "Simplicity First",
       description:
         "We believe investing shouldn't be rocket science. Every feature is designed with beginners in mind.",
     },
     {
-      icon: <Users className="text-paisa-gold" size={32} />,
+      id: 2,
+      icon: <IconUsersGroup className="text-paisa-gold" size={32} />,
       title: "Customer Centric",
       description:
         "Your success is our success. We provide 24/7 support and guidance to help you make informed decisions.",
     },
     {
-      icon: <TrendingUp className="text-paisa-gold" size={32} />,
+      id: 3,
+      icon: <IconTrendingUp className="text-paisa-gold" size={32} />,
       title: "Transparent Growth",
       description:
         "No hidden fees, no confusing terms. We believe in complete transparency in everything we do.",
     },
     {
-      icon: <Award className="text-paisa-gold" size={32} />,
+      id: 4,
+      icon: <IconCertificate className="text-paisa-gold" size={32} />,
       title: "Expert Guidance",
       description:
         "Our team of certified financial advisors ensures you get the best advice for your financial goals.",
@@ -99,7 +110,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="animate-slide-up">
               <div className="flex items-center mb-6">
-                <Target className="text-paisa-gold mr-4" size={40} />
+                <IconTargetArrow className="text-paisa-gold mr-4" size={40} />
                 <h2 className="text-3xl font-bold text-paisa-blue">
                   Our Mission
                 </h2>
@@ -118,7 +129,7 @@ const AboutPage = () => {
             </div>
             <div className="animate-slide-up">
               <div className="flex items-center mb-6">
-                <Eye className="text-paisa-gold mr-4" size={40} />
+                <IconTelescope className="text-paisa-gold mr-4" size={40} />
                 <h2 className="text-3xl font-bold text-paisa-blue">
                   Our Vision
                 </h2>
@@ -151,11 +162,11 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
+            {values.map((value) => (
               <div
-                key={index}
+                key={value.id}
                 className="card p-6 text-center animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${value.id * 0.1}s` }}
               >
                 <div className="mb-4 flex justify-center">{value.icon}</div>
                 <h3 className="text-xl font-semibold text-paisa-blue mb-3">
@@ -186,11 +197,15 @@ const AboutPage = () => {
               {milestones.map((milestone, index) => (
                 <div
                   key={index}
-                  className={`flex items-center animate-slide-up ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+                  className={`flex items-center animate-slide-up ${
+                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  }`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div
-                    className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
+                    className={`w-1/2 ${
+                      index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
+                    }`}
                   >
                     <div className="card p-6">
                       <div className="text-2xl font-bold text-paisa-gold mb-2">

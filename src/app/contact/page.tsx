@@ -2,15 +2,15 @@
 
 import React, { useState } from "react";
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
-  Send,
-  MessageCircle,
-  Calendar,
-  HelpCircle,
-} from "lucide-react";
+  IconPhone,
+  IconMail,
+  IconMessages,
+  IconCalendarEvent,
+  IconSend,
+  IconClock,
+  IconHelpCircle,
+  IconMapPin,
+} from "@tabler/icons-react";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ const ContactPage = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    >
   ) => {
     setFormData({
       ...formData,
@@ -41,23 +41,23 @@ const ContactPage = () => {
 
   const contactMethods = [
     {
-      icon: <Phone className="text-paisa-gold" size={24} />,
+      icon: <IconPhone className="text-paisa-gold" size={24} />,
       title: "Phone Support",
       description: "Speak with our experts",
-      info: "+91 98765 43210",
+      info: "+91 600-541-1368",
       action: "Call Now",
-      availability: "Mon-Sat, 9 AM - 9 PM",
+      availability: "Mon-Sat, 9 AM - 5 PM",
     },
     {
-      icon: <Mail className="text-paisa-gold" size={24} />,
+      icon: <IconMail className="text-paisa-gold" size={24} />,
       title: "Email Support",
       description: "Get detailed responses",
-      info: "hello@paisagullak.com",
+      info: "paisagullak@gmail.com",
       action: "Send Email",
       availability: "24/7 response within 2 hours",
     },
     {
-      icon: <MessageCircle className="text-paisa-gold" size={24} />,
+      icon: <IconMessages className="text-paisa-gold" size={24} />,
       title: "Live Chat",
       description: "Instant help available",
       info: "Chat with us now",
@@ -65,7 +65,7 @@ const ContactPage = () => {
       availability: "Available 24/7",
     },
     {
-      icon: <Calendar className="text-paisa-gold" size={24} />,
+      icon: <IconCalendarEvent className="text-paisa-gold" size={24} />,
       title: "Book Consultation",
       description: "Free expert advice",
       info: "30-minute session",
@@ -287,7 +287,7 @@ const ContactPage = () => {
                     type="submit"
                     className="btn-primary w-full flex items-center justify-center space-x-2"
                   >
-                    <Send size={20} />
+                    <IconSend size={20} />
                     <span>Send Message</span>
                   </button>
                 </form>
@@ -302,16 +302,16 @@ const ContactPage = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Phone size={16} className="text-paisa-gold" />
-                    <span className="text-gray-700">+91 98765 43210</span>
+                    <IconPhone size={16} className="text-paisa-gold" />
+                    <span className="text-gray-700">+91 600-541-1368</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Mail size={16} className="text-paisa-gold" />
-                    <span className="text-gray-700">hello@paisagullak.com</span>
+                    <IconMail size={16} className="text-paisa-gold" />
+                    <span className="text-gray-700">paisagullak@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Clock size={16} className="text-paisa-gold" />
-                    <span className="text-gray-700">Mon-Sat, 9 AM - 9 PM</span>
+                    <IconClock size={16} className="text-paisa-gold" />
+                    <span className="text-gray-700">Mon-Sat, 9 AM - 5 PM</span>
                   </div>
                 </div>
               </div>
@@ -319,7 +319,7 @@ const ContactPage = () => {
               {/* Expert Consultation */}
               <div className="card p-6 bg-paisa-gold/5 animate-slide-up">
                 <div className="flex items-center mb-4">
-                  <HelpCircle className="text-paisa-gold mr-3" size={24} />
+                  <IconHelpCircle className="text-paisa-gold mr-3" size={24} />
                   <h3 className="text-xl font-semibold text-paisa-blue">
                     Need Expert Advice?
                   </h3>
@@ -404,7 +404,7 @@ const ContactPage = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-center mb-4">
-                  <MapPin className="text-paisa-gold mr-3" size={24} />
+                  <IconMapPin className="text-paisa-gold mr-3" size={24} />
                   <h3 className="text-xl font-semibold text-paisa-blue">
                     {office.city}
                   </h3>
@@ -412,13 +412,13 @@ const ContactPage = () => {
                 <p className="text-gray-600 mb-4">{office.address}</p>
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
-                    <Phone size={14} className="text-paisa-gold" />
+                    <IconPhone size={14} className="text-paisa-gold" />
                     <span className="text-sm text-gray-700">
                       {office.phone}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Mail size={14} className="text-paisa-gold" />
+                    <IconMail size={14} className="text-paisa-gold" />
                     <span className="text-sm text-gray-700">
                       {office.email}
                     </span>
