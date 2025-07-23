@@ -187,8 +187,10 @@ const MutualFundsPage = () => {
               Mutual <span className="text-paisa-gold">Funds</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Handpicked mutual funds for smart investing. Start your SIP with
-              just ₹500 and let expert fund managers grow your wealth.
+              Mutual funds are well-regulated by SEBI to ensure transparency,
+              safety, and efficient management. Invest smartly with handpicked
+              mutual funds — start your SIP with just ₹500 and let expert fund
+              managers grow your wealth.-
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="btn-primary flex items-center justify-center space-x-2">

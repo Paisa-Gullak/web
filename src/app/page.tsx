@@ -9,6 +9,7 @@ import {
   IconAward,
   IconStarFilled,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 const HomePage = () => {
   const features = [
@@ -44,31 +45,31 @@ const HomePage = () => {
 
   const testimonials = [
     {
-      name: "Priya Sharma",
-      age: "24, Software Engineer",
+      name: "Mr.Ashwani Kesar",
+      age: "79, Rtd. Banker",
       content:
-        "Finally, an investment platform that doesn't confuse me! Started my SIP with just ₹1000.",
+        "Paisa Gullak made my entry into mutual funds super smooth. Their recommendations felt personalized and their insurance options were just as easy to understand. Finally, a platform that speaks my language!",
       rating: 5,
     },
     {
-      name: "Arjun Patel",
-      age: "28, Marketing Manager",
+      name: "Amit Kaushal",
+      age: "38, Business Owner",
       content:
-        "The expert guidance helped me choose the right mutual funds. My portfolio is up 12%!",
+        "Managing investments and securing my family’s future used to feel overwhelming. With Paisa Gullak, I could start an SIP and get the right term plan in just a few clicks. Absolutely stress-free!",
       rating: 5,
     },
     {
-      name: "Sneha Gupta",
-      age: "26, Designer",
+      name: "Pooja Grover",
+      age: "47, Pvt. Tutor",
       content:
-        "Love how they explain everything in simple terms. No more investment anxiety!",
+        "Paisa Gullak isn’t just another financial tool — it’s like having a smart advisor by your side. Whether it’s choosing the right insurance or investing in mutual funds, it’s built with real users in mind and makes the entire journey seamless.",
       rating: 5,
     },
   ];
 
   const stats = [
-    { value: "50,000+", label: "Happy Investors" },
-    { value: "₹500 Cr+", label: "Assets Managed" },
+    { value: "70+", label: "Happy Investors" },
+    { value: "₹2 Cr+", label: "Assets Managed" },
     { value: "15%", label: "Average Returns" },
     { value: "4.8/5", label: "User Rating" },
   ];
@@ -77,7 +78,7 @@ const HomePage = () => {
     <div className="animate-fade-in">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-paisa-cream to-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
               <h1 className="text-4xl lg:text-6xl font-bold text-paisa-blue mb-6 leading-tight">
@@ -113,7 +114,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="relative animate-scale-in">
-              <div className="bg-white rounded-2xl shadow-2xl p-8 relative z-10">
+              {/* <div className="bg-white rounded-2xl shadow-2xl p-8 relative z-10">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-semibold text-paisa-blue mb-2">
                     Your Investment Dashboard
@@ -138,9 +139,17 @@ const HomePage = () => {
                     </span>
                   </div>
                 </div>
+              </div> */}
+              <div className="z-10">
+                <Image
+                  src="/pg-hero-illustration.svg"
+                  alt="Paisa Gullak team researching"
+                  width={1000}
+                  height={200}
+                />
               </div>
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-paisa-gold/20 rounded-full"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-paisa-blue/10 rounded-full"></div>
+              <div className="absolute -top-6 right-0 sm:-right-6 w-24 h-24 bg-paisa-gold/20 rounded-full"></div>
+              <div className="absolute -bottom-10 sm:-bottom-6 left-0 sm:-left-6 w-32 h-32 bg-paisa-blue/10 rounded-full"></div>
             </div>
           </div>
         </div>
