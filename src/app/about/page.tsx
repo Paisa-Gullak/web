@@ -65,24 +65,34 @@ const AboutPage = () => {
 
   const milestones = [
     {
+      year: "2021",
+      title: "Accidentally Started",
+      description:
+        "The company began as an unexpected experiment that grew into a financial venture",
+    },
+    {
       year: "2022",
-      title: "Company Founded",
-      description: "Started with a vision to democratize investing",
+      title: "Aggregated 1 Cr AUM",
+      description:
+        "Successfully aggregated ₹1 Cr in Assets Under Management, marking our first major milestone",
     },
     {
       year: "2023",
-      title: "10,000 Users",
-      description: "Reached our first milestone of happy investors",
-    },
-    {
-      year: "2023",
-      title: "SEBI Registration",
-      description: "Became a registered investment advisor",
+      title: "100+ Clients in Rural Retail Sector",
+      description:
+        "Delivering financial access and trust in rural communities — empowering 100+ clients and securing ₹2 Cr+ in AUM",
     },
     {
       year: "2024",
-      title: "50,000+ Users",
-      description: "Joined by thousands of young investors",
+      title: "Process of Corporatisation Initiated",
+      description:
+        "Laid the foundation for formalising operations and transitioning into a structured corporate entity",
+    },
+    {
+      year: "2025",
+      title: "Birth of Paisa Gullak",
+      description:
+        "Paisa Gullak started as a small idea and marked the beginning of our journey in finance",
     },
   ];
 
@@ -116,15 +126,19 @@ const AboutPage = () => {
                 </h2>
               </div>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                To democratize wealth creation by providing simple, transparent,
-                and accessible investment solutions for India's millennials and
-                Gen Z investors.
+                Shaping a financially confident India by simplifying investments
+                and empowering individuals to take control of their financial
+                future.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We believe that everyone deserves the opportunity to build
-                wealth, regardless of their financial background or investment
-                knowledge. That's why we've built a platform that speaks your
-                language and guides you every step of the way.
+                We’re on a mission to offer secure and simplified access to
+                mutual funds and insurance products across the country. Through
+                clear, honest guidance and a strong focus on financial literacy,
+                we aim to help individuals make informed choices that build
+                long-term wealth. With user-friendly fintech solutions and a
+                collaborative work culture, we strive to deliver value to
+                investors, stakeholders, and our team alike—creating a balanced
+                ecosystem where everyone benefits.
               </p>
             </div>
             <div className="animate-slide-up">
@@ -135,15 +149,15 @@ const AboutPage = () => {
                 </h2>
               </div>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                To become India's most trusted investment platform for young
-                investors, helping 1 million people achieve their financial
-                goals by 2030.
+                To become India’s most trusted and accessible financial
+                platform—where every individual, regardless of background, has
+                the tools, knowledge, and confidence to build a secure financial
+                future.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We envision a future where investing is as easy as ordering food
-                online, where every young Indian has access to the same
-                investment opportunities as the wealthy, and where financial
-                literacy is no longer a barrier to wealth creation.
+                We envision a nation where financial empowerment is not a
+                privilege but a right—driven by innovation, education, and
+                inclusion.
               </p>
             </div>
           </div>
@@ -184,7 +198,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-paisa-blue mb-4">
-              Our Journey
+              Evolution Of Paisa Gullak
             </h2>
             <p className="text-xl text-gray-600">
               From a simple idea to helping thousands of young Indians invest
