@@ -41,26 +41,26 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Rajesh Kumar",
-      role: "Founder & CEO",
-      experience: "15+ years in Financial Services",
+      name: "Mitali Rajkonwar",
+      role: "Founder",
+      // experience: "15+ years in Financial Services",
       description:
-        "Former VP at leading mutual fund company, passionate about financial inclusion.",
+        "With a strong foundation in finance and a sharp business acumen, Mitali drives the company’s vision and growth while ensuring trust, clarity, and impact in every step.",
     },
     {
-      name: "Priya Menon",
-      role: "Head of Product",
-      experience: "12+ years in FinTech",
+      name: "Sh. Mohan Lal Bargotra",
+      role: "Consulting Director",
+      // experience: "12+ years in FinTech",
       description:
-        "Product specialist who led digital transformation at top investment platforms.",
+        "Sh. Mohan Lal Bargotra is a seasoned banking professional with over 33 years of experience in financial services. A retired banker, he brings a wealth of insight in regulatory compliance, risk management, and customer-centric financial solutions. His strategic guidance supports sound decision-making and long-term financial integrity.",
     },
-    {
-      name: "Amit Sharma",
-      role: "Chief Investment Officer",
-      experience: "18+ years in Investment Management",
-      description:
-        "Expert fund manager with proven track record of generating superior returns.",
-    },
+    // {
+    //   name: "Amit Sharma",
+    //   role: "Chief Investment Officer",
+    //   experience: "18+ years in Investment Management",
+    //   description:
+    //     "Expert fund manager with proven track record of generating superior returns.",
+    // },
   ];
 
   const milestones = [
@@ -251,7 +251,7 @@ const AboutPage = () => {
               Experienced professionals committed to your financial success.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {team.map((member, index) => (
               <div
                 key={index}
@@ -269,9 +269,9 @@ const AboutPage = () => {
                 <div className="text-paisa-gold font-medium mb-2">
                   {member.role}
                 </div>
-                <div className="text-sm text-gray-500 mb-3">
+                {/* <div className="text-sm text-gray-500 mb-3">
                   {member.experience}
-                </div>
+                </div> */}
                 <p className="text-gray-600 text-sm">{member.description}</p>
               </div>
             ))}

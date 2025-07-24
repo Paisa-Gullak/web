@@ -152,6 +152,34 @@ const MutualFundsPage = () => {
     },
   ];
 
+  const regulatoryFramework = [
+    {
+      title: "Regulated by SEBI",
+      description:
+        "All mutual funds are regulated by the Securities and Exchange Board of India (SEBI). It ensures transparency, ethical practices, and investor protection through strict rules for Asset Management Companies (AMCs).",
+    },
+    {
+      title: "Independent Oversight",
+      description:
+        "Each fund has a Trustee to protect investors’ interests and a Custodian to securely hold the securities. Both are registered with SEBI to ensure compliance and operational security.",
+    },
+    {
+      title: "Industry Standards by AMFI",
+      description:
+        "The Association of Mutual Funds in India (AMFI) sets ethical standards, certifies distributors, and works to educate investors. It ensures mutual fund distributors act responsibly.",
+    },
+    {
+      title: "Built-in Investor Safeguards",
+      description:
+        "Regular NAV disclosures, Risk-O-Meter labels, and portfolio transparency help you invest confidently. SEBI and AMFI also handle grievance redressal efficiently.",
+    },
+    {
+      title: "Invest With Confidence",
+      description:
+        "At Paisa Gullak, your investments are made within a fully regulated and secure ecosystem, managed by expert fund managers and guided by the highest compliance standards.",
+    },
+  ];
+
   const filteredFunds = featuredFunds.filter((fund) => {
     const matchesCategory =
       selectedCategory === "all" ||
@@ -412,6 +440,54 @@ const MutualFundsPage = () => {
               </button>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Regulatory Framework */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-paisa-blue mb-4">
+              Secure. Regulated. Reliable.
+            </h2>
+            <p className="text-xl text-gray-600">
+              Discover how SEBI, AMFI, and trusted fund houses work together to
+              ensure your investments are transparent, safe, and professionally
+              managed.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-paisa-gold"></div>
+            <div className="space-y-12">
+              {regulatoryFramework.map((regulators, index) => (
+                <div
+                  key={index}
+                  className={`flex items-center animate-slide-up ${
+                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  }`}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div
+                    className={`w-1/2 ${
+                      index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
+                    }`}
+                  >
+                    <div className="card p-6">
+                      {/* <div className="text-2xl font-bold text-paisa-gold mb-2">
+                        {regulators.title}
+                      </div> */}
+                      <h3 className="text-2xl font-semibold text-paisa-blue mb-2">
+                        {regulators.title}
+                      </h3>
+                      <p className="text-gray-600">{regulators.description}</p>
+                    </div>
+                  </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-paisa-gold rounded-full border-4 border-white shadow-lg"></div>
+                  <div className="w-1/2"></div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
