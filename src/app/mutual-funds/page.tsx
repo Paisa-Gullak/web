@@ -456,7 +456,8 @@ const MutualFundsPage = () => {
               managed.
             </p>
           </div>
-          <div className="relative">
+          {/* Desktop Version */}
+          <div className="relative md:block hidden">
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-paisa-gold"></div>
             <div className="space-y-12">
               {regulatoryFramework.map((regulators, index) => (
@@ -473,9 +474,6 @@ const MutualFundsPage = () => {
                     }`}
                   >
                     <div className="card p-6">
-                      {/* <div className="text-2xl font-bold text-paisa-gold mb-2">
-                        {regulators.title}
-                      </div> */}
                       <h3 className="text-2xl font-semibold text-paisa-blue mb-2">
                         {regulators.title}
                       </h3>
@@ -484,6 +482,29 @@ const MutualFundsPage = () => {
                   </div>
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-paisa-gold rounded-full border-4 border-white shadow-lg"></div>
                   <div className="w-1/2"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Mobile Version */}
+          <div className="relative block md:hidden">
+            <div className="absolute h-full w-1 bg-paisa-gold"></div>
+            <div className="space-y-12">
+              {regulatoryFramework.map((regulators, index) => (
+                <div
+                  key={index}
+                  className={"flex items-center animate-slide-up"}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className={"w-full ml-8"}>
+                    <div className="card p-6">
+                      <h3 className="text-xl font-semibold text-paisa-blue mb-2">
+                        {regulators.title}
+                      </h3>
+                      <p className="text-gray-600">{regulators.description}</p>
+                    </div>
+                  </div>
+                  <div className="absolute -left-1.5 w-4 h-4 bg-paisa-gold rounded-full border-4 border-white shadow-lg"></div>
                 </div>
               ))}
             </div>
