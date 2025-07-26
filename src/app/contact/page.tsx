@@ -99,23 +99,17 @@ const ContactPage = () => {
 
   const offices = [
     {
-      city: "Mumbai",
-      address: "Level 12, Trade Center, Bandra Kurla Complex, Mumbai - 400051",
-      phone: "+91 98765 43210",
-      email: "mumbai@paisagullak.com",
+      city: "Jammu",
+      address: "Vill. Palli Morh, Tehsil Bishnah, Jammu - 181133",
+      phone: "+91 600-541-1368",
+      email: "paisagullak@gmail.com",
     },
+
     {
-      city: "Bangalore",
-      address:
-        "4th Floor, UB City Mall, Vittal Mallya Road, Bangalore - 560001",
-      phone: "+91 98765 43211",
-      email: "bangalore@paisagullak.com",
-    },
-    {
-      city: "Delhi",
-      address: "Tower A, DLF Cyber City, Sector 24, Gurugram - 122002",
-      phone: "+91 98765 43212",
-      email: "delhi@paisagullak.com",
+      city: "New Delhi",
+      address: "246/A, Vasant Kung Enclave, Block B, New Dehli - 110070",
+      // phone: "+91 98765 43212",
+      email: "paisagullak@gmail.com",
     },
   ];
 
@@ -334,7 +328,7 @@ const ContactPage = () => {
               </div>
 
               {/* Emergency Support */}
-              <div className="card p-6 border border-red-200 animate-slide-up">
+              {/* <div className="card p-6 border border-red-200 animate-slide-up">
                 <h3 className="text-lg font-semibold text-red-600 mb-2">
                   Emergency Support
                 </h3>
@@ -344,7 +338,7 @@ const ContactPage = () => {
                 <button className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-full">
                   Emergency Helpline
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -396,7 +390,7 @@ const ContactPage = () => {
               Visit us at any of our offices across India.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {offices.map((office, index) => (
               <div
                 key={index}
@@ -411,12 +405,14 @@ const ContactPage = () => {
                 </div>
                 <p className="text-gray-600 mb-4">{office.address}</p>
                 <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <IconPhone size={14} className="text-paisa-gold" />
-                    <span className="text-sm text-gray-700">
-                      {office.phone}
-                    </span>
-                  </div>
+                  {office.phone ? (
+                    <div className="flex items-center space-x-2">
+                      <IconPhone size={14} className="text-paisa-gold" />
+                      <span className="text-sm text-gray-700">
+                        {office.phone}
+                      </span>
+                    </div>
+                  ) : null}
                   <div className="flex items-center space-x-2">
                     <IconMail size={14} className="text-paisa-gold" />
                     <span className="text-sm text-gray-700">
