@@ -12,9 +12,63 @@ import {
   IconTrendingUp,
   IconArrowRight,
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 const InsurancePage = () => {
   const [selectedTab, setSelectedTab] = useState("life");
+  const [monthlyIncome, setMonthlyIncome] = useState<string>("");
+  const [age, setAge] = useState<string>("");
+  const [dependents, setDependents] = useState<string>("");
+  const [estCoverage, setEstCoverage] = useState<number>(0);
+
+  // Calculate Multiplier
+  function getMultiplier(age: number): number {
+    switch (true) {
+      case age <= 25:
+        return 25;
+      case age < 29:
+        return 22;
+      case age < 34:
+        return 20;
+      case age < 39:
+        return 18;
+      case age < 44:
+        return 15;
+      case age < 49:
+        return 12;
+      case age < 54:
+        return 10;
+      case age < 59:
+        return 8;
+      default:
+        return 6;
+    }
+  }
+
+  // formula to calculate estimated insurance value
+  function handleCalculate() {
+    const income = Number(monthlyIncome);
+    const personAge = Number(age);
+    const numOfDependents = Number(dependents);
+
+    const multiplier = getMultiplier(personAge);
+
+    const coverage = income * 12 * multiplier * numOfDependents;
+    setEstCoverage(coverage);
+  }
+
+  // formatting big value
+  function format(value: number): string {
+    if (value >= 10000000) {
+      return (value / 10000000).toFixed(2) + " " + "Cr";
+    } else if (value >= 100000) {
+      return (value / 100000).toFixed(2) + " " + "L";
+    } else if (value >= 1000) {
+      return (value / 1000).toFixed(0) + " " + "K";
+    } else {
+      return value.toString();
+    }
+  }
 
   const insuranceTypes = [
     { id: "life", name: "Life Insurance", icon: <IconHeartbeat size={20} /> },
@@ -515,6 +569,8 @@ const InsurancePage = () => {
                     <input
                       type="number"
                       placeholder="₹50,000"
+                      value={monthlyIncome}
+                      onChange={(e) => setMonthlyIncome(e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-paisa-gold focus:border-transparent"
                     />
                   </div>
@@ -525,6 +581,8 @@ const InsurancePage = () => {
                     <input
                       type="number"
                       placeholder="28"
+                      value={age}
+                      onChange={(e) => setAge(e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-paisa-gold focus:border-transparent"
                     />
                   </div>
@@ -532,17 +590,23 @@ const InsurancePage = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Dependents
                     </label>
-                    <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-paisa-gold focus:border-transparent">
+                    <select
+                      value={dependents}
+                      onChange={(e) => setDependents(e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-paisa-gold focus:border-transparent"
+                    >
                       <option>Select number of dependents</option>
-                      <option>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5+</option>
+                      <option value={1}>1</option>
+                      <option value={2}>2</option>
+                      <option value={3}>3</option>
+                      <option value={4}>4</option>
+                      <option value={5}>5+</option>
                     </select>
                   </div>
-                  <button className="btn-primary w-full">
+                  <button
+                    onClick={handleCalculate}
+                    className="btn-primary w-full"
+                  >
                     Calculate Coverage Need
                   </button>
                 </div>
@@ -552,12 +616,24 @@ const InsurancePage = () => {
                       Recommended Coverage
                     </div>
                     <div className="text-2xl font-bold text-paisa-gold">
-                      ₹75 Lakh
+                      {estCoverage === 0 ? (
+                        <div>₹75 L</div>
+                      ) : (
+                        "₹" + format(estCoverage)
+                      )}
                     </div>
                     <div className="text-sm text-gray-600">
                       Based on your inputs
                     </div>
                   </div>
+                </div>
+                <div className="text-gray-600 text-sm mt-4">
+                  Disclaimer: The insurance value shown is only an estimate
+                  based on limited inputs. For a personalized and accurate
+                  calculation, please{" "}
+                  <Link className="underline text-paisa-gold" href="/contact">
+                    contact us.
+                  </Link>
                 </div>
               </div>
             </div>
