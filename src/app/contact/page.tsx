@@ -11,6 +11,7 @@ import {
   IconHelpCircle,
   IconMapPin,
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -374,7 +375,9 @@ const ContactPage = () => {
             <p className="text-gray-600 mb-4">
               Can't find what you're looking for?
             </p>
-            <button className="btn-secondary">View All FAQs</button>
+            <Link href="/faqs" className="btn-secondary">
+              View All FAQs
+            </Link>
           </div>
         </div>
       </section>
