@@ -32,7 +32,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61577822617184"
                 className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
               >
                 <IconBrandFacebook size={20} />
@@ -150,7 +150,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <IconMail size={16} className="text-paisa-gold" />
-                <span className="text-gray-300">paisagullak@gmail.com</span>
+                <span className="text-gray-300">info@paisagullak.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <IconPhone size={16} className="text-paisa-gold" />

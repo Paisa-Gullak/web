@@ -10,6 +10,7 @@ import {
   IconClock,
   IconHelpCircle,
   IconMapPin,
+  IconTemperature,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -40,6 +41,23 @@ const ContactPage = () => {
     console.log("Form submitted:", formData);
   };
 
+  const handleEmailClick = () => {
+    const email = "support@paisagullak.com";
+
+    const mobileLink = `mailto:${email}`;
+    const desktopLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+
+    const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(
+      navigator.userAgent
+    );
+
+    if (isMobile) {
+      window.location.href = mobileLink;
+    } else {
+      window.open(desktopLink);
+    }
+  };
+
   const contactMethods = [
     {
       icon: <IconPhone className="text-paisa-gold" size={24} />,
@@ -47,14 +65,16 @@ const ContactPage = () => {
       description: "Speak with our experts",
       info: "+91 600-541-1368",
       action: "Call Now",
+      link: "tel:+916005411368",
       availability: "Mon-Sat, 9 AM - 5 PM",
     },
     {
       icon: <IconMail className="text-paisa-gold" size={24} />,
       title: "Email Support",
       description: "Get detailed responses",
-      info: "paisagullak@gmail.com",
+      info: "support@paisagullak.com",
       action: "Send Email",
+      link: handleEmailClick,
       availability: "24/7 response within 2 hours",
     },
     {
@@ -103,14 +123,14 @@ const ContactPage = () => {
       city: "Jammu",
       address: "Vill. Palli Morh, Tehsil Bishnah, Jammu - 181133",
       phone: "+91 600-541-1368",
-      email: "paisagullak@gmail.com",
+      email: "info@paisagullak.com",
     },
 
     {
       city: "New Delhi",
       address: "246/A, Vasant Kung Enclave, Block B, New Dehli - 110070",
       // phone: "+91 98765 43212",
-      email: "paisagullak@gmail.com",
+      email: "info@paisagullak.com",
     },
   ];
 
@@ -162,9 +182,26 @@ const ContactPage = () => {
                 <div className="text-xs text-gray-500 mb-4">
                   {method.availability}
                 </div>
-                <button className="btn-primary w-full text-sm py-2">
-                  {method.action}
-                </button>
+
+                {method.link ? (
+                  <button
+                    className="btn-primary w-full text-sm py-2"
+                    onClick={() => {
+                      if (typeof method.link === "string") {
+                        window.location.href = method.link;
+                      }
+                      if (typeof method.link === "function") {
+                        method.link();
+                      }
+                    }}
+                  >
+                    {method.action}
+                  </button>
+                ) : (
+                  <button className="btn-primary w-full text-sm py-2">
+                    {method.action}
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -302,7 +339,7 @@ const ContactPage = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <IconMail size={16} className="text-paisa-gold" />
-                    <span className="text-gray-700">paisagullak@gmail.com</span>
+                    <span className="text-gray-700">info@paisagullak.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <IconClock size={16} className="text-paisa-gold" />
