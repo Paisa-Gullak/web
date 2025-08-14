@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IconHelpCircle, IconX, IconMenu } from "@tabler/icons-react";
 import Image from "next/image";
+import SignIn from "@/components/sign-in";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,7 +58,8 @@ const Header = () => {
               <IconHelpCircle size={20} />
               <span className="font-medium">Talk to Expert</span>
             </button>
-            <button className="btn-primary">Start Investing</button>
+            {/* <button className="btn-primary">Start Investing</button> */}
+            <SignIn />
           </div>
 
           {/* Mobile Menu Button */}
