@@ -94,6 +94,14 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/calculators"
+                  className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
+                >
+                  Calculators
+                </Link>
+              </li>
             </ul>
           </div>
 
