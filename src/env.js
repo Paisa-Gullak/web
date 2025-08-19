@@ -8,10 +8,10 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
-    GITHUB_CLIENT_ID: z.string(),
-    GITHUB_CLIENT_SECRET: z.string(),
-    DATABASE_URL: z.string(),
-    DATABASE_AUTH_TOKEN: z.string(),
+    GITHUB_CLIENT_ID: z.string().optional(),
+    GITHUB_CLIENT_SECRET: z.string().optional(),
+    DATABASE_URL: z.string().optional(),
+    DATABASE_AUTH_TOKEN: z.string().optional(),
   },
 
   /**
