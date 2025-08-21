@@ -1,7 +1,7 @@
 import { sql } from "drizzle-orm";
 import { sqliteTable, text, int } from "drizzle-orm/sqlite-core";
 import { user } from ".";
-import { nanoid } from "@/lib/utils";
+import { nanoid } from "@/lib/nanoid";
 
 export const session = sqliteTable("session", {
   id: text("id", { length: 255 })
@@ -13,7 +13,7 @@ export const session = sqliteTable("session", {
     .default(sql`(unixepoch())`)
     .notNull(),
   updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-    () => new Date(),
+    () => new Date()
   ),
   ipAddress: text("ip_address"),
   userAgent: text("user_agent"),
@@ -47,7 +47,7 @@ export const account = sqliteTable("account", {
     .default(sql`(unixepoch())`)
     .notNull(),
   updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-    () => new Date(),
+    () => new Date()
   ),
 });
 
@@ -62,6 +62,6 @@ export const verification = sqliteTable("verification", {
     .default(sql`(unixepoch())`)
     .notNull(),
   updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-    () => new Date(),
+    () => new Date()
   ),
 });

@@ -1,4 +1,4 @@
-import { nanoid } from "@/lib/utils";
+import { nanoid } from "@/lib/nanoid";
 import { sql, relations } from "drizzle-orm";
 import { sqliteTable, text, int } from "drizzle-orm/sqlite-core";
 
