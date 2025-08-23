@@ -66,6 +66,15 @@ layer(base);
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+  :root {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+  }
+  .dark {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+  }
 }
 
 @utility btn-primary {
@@ -99,6 +108,13 @@ layer(base);
 @layer utilities {
   * {
     font-family: "Outfit", sans-serif;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 }
 
