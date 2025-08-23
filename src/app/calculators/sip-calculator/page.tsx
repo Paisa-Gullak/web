@@ -21,7 +21,7 @@ export default function SipCalculator() {
             plan your mutual fund investments with ease.
           </p>
 
-          {/* <SipCalc /> */}
+          <SipCalc />
         </div>
       </section>
     </>
