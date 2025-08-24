@@ -201,13 +201,13 @@ export function ChartAreaGradient({
 
   const yAxisFormat = (value: number) => {
     if (value >= 10000000) {
-      return (value / 10000000).toFixed(1) + " " + "Cr";
+      return "₹" + " " + (value / 10000000).toFixed(1) + " " + "Cr";
     } else if (value >= 100000) {
-      return (value / 100000).toFixed(1) + " " + "L";
+      return "₹" + " " + (value / 100000).toFixed(1) + " " + "L";
     } else if (value >= 1000) {
-      return (value / 1000).toFixed(0) + " " + "K";
+      return "₹" + " " + (value / 1000).toFixed(0) + " " + "K";
     } else {
-      return value.toString();
+      return "₹" + " " + value.toString();
     }
   };
 
