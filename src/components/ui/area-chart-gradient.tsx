@@ -191,12 +191,25 @@ export function ChartAreaGradient({
   const chartData = data || defaultData;
 
   // Format numbers for display
-  const formatINR = (num: number) =>
-    new Intl.NumberFormat("en-IN", {
+  const formatINR = (num: number) => {
+    return new Intl.NumberFormat("en-IN", {
       style: "currency",
       currency: "INR",
       maximumFractionDigits: 0,
     }).format(num);
+  };
+
+  const yAxisFormat = (value: number) => {
+    if (value >= 10000000) {
+      return (value / 10000000).toFixed(1) + " " + "Cr";
+    } else if (value >= 100000) {
+      return (value / 100000).toFixed(1) + " " + "L";
+    } else if (value >= 1000) {
+      return (value / 1000).toFixed(0) + " " + "K";
+    } else {
+      return value.toString();
+    }
+  };
 
   return (
     <Card>
@@ -245,7 +258,7 @@ export function ChartAreaGradient({
             <YAxis
               type="number"
               domain={["auto", "auto"]}
-              tickFormatter={(value) => formatINR(value)}
+              tickFormatter={(value) => yAxisFormat(value)}
             />
             <ChartTooltip
               cursor={false}

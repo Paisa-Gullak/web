@@ -72,7 +72,7 @@ export default function CalculatorsPage() {
                 <div className="mt-auto">
                   <Link
                     className="btn-primary w-full text-sm py-2 flex justify-center items-center gap-2"
-                    href="/calculators/sip-calculator"
+                    href={calc.link}
                   >
                     {calc.linkText}{" "}
                     <span>

@@ -7,12 +7,12 @@ import { ChartAreaGradient } from "@/components/ui/area-chart-gradient";
 
 export default function SipCalc() {
   const [monthlyInvestment, setMonthlyInvestment] = useState<number>(10000);
-  const [expectedRoi, setExpectedRoi] = useState<number>(10);
+  const [expectedRoi, setExpectedRoi] = useState<number>(15);
   const [tenure, setTenure] = useState<number>(10);
 
   const handleReset = () => {
     setMonthlyInvestment(10000);
-    setExpectedRoi(10);
+    setExpectedRoi(15);
     setTenure(10);
   };
 
@@ -64,7 +64,6 @@ export default function SipCalc() {
         total: Math.round(futureValue),
       });
     }
-
     return data;
   };
   const chartData = generateChartData();
@@ -75,7 +74,8 @@ export default function SipCalc() {
 
   return (
     <>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-3 h-auto">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-auto">
+        {/* Calculator */}
         <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5">
           <InputSlider
             width={150}
@@ -122,13 +122,14 @@ export default function SipCalc() {
             </button>
           </div>
         </div>
+        {/* Chart */}
         <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5">
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-3">
             <div className="card py-4 px-4">
-              <span className="font-medium text-paisa-blue text-sm pl-1.5">
+              <span className="font-medium text-paisa-blue text-[12px] pl-1.5">
                 Invested Amount:
               </span>
-              <div className="flex items-center font-semibold text-paisa-blue text-2xl">
+              <div className="flex items-center font-semibold text-paisa-blue text-xl">
                 <span>
                   <IconCurrencyRupee size={24} />
                 </span>
@@ -138,10 +139,10 @@ export default function SipCalc() {
               </div>
             </div>
             <div className="card py-4 px-4">
-              <span className="font-medium text-paisa-blue text-sm pl-1.5">
+              <span className="font-medium text-paisa-blue text-[12px] pl-1.5">
                 Est. Returns:
               </span>
-              <div className="flex gap-1 items-center justify-start font-semibold text-paisa-blue text-2xl">
+              <div className="flex items-center justify-start font-semibold text-paisa-blue text-xl">
                 <span>
                   <IconCurrencyRupee size={24} />
                 </span>
@@ -151,10 +152,10 @@ export default function SipCalc() {
               </div>
             </div>
             <div className="card py-4 px-4">
-              <span className="font-medium text-paisa-blue text-sm pl-1.5">
+              <span className="font-medium text-paisa-blue text-[12px] pl-1.5">
                 Total Value:
               </span>
-              <div className="flex gap-1 items-center justify-start font-semibold text-paisa-blue text-2xl">
+              <div className="flex items-center justify-start font-semibold text-paisa-blue text-xl">
                 <span>
                   <IconCurrencyRupee size={24} />
                 </span>

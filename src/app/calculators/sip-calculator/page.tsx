@@ -5,8 +5,8 @@ export default function SipCalculator() {
     <>
       <section className="bg-gradient-to-br from-paisa-cream to-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-3">
-            <h1 className="text-2xl lg:text-5xl font-bold text-paisa-blue ">
+          <div className="md:flex flex-row items-center gap-3 mb-3">
+            <h1 className="text-3xl lg:text-5xl font-bold text-paisa-blue ">
               SIP Calculator{" "}
             </h1>
             <span className="text-lg font-semibold text-paisa-gold">
