@@ -66,7 +66,7 @@ export default function LumpsumCalc() {
 
   return (
     <>
-      <section className="grid lg:grid-cols-2 sm:grid-cols-1 gap-3 h-auto">
+      <section className="grid lg:grid-cols-2 grid-cols-1 gap-3 h-auto">
         <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5">
           <InputSlider
             width={150}
