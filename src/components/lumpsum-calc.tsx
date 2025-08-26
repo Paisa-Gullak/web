@@ -132,7 +132,7 @@ export default function LumpsumCalc() {
             </div>
           </div>
           <ChartAreaGradient
-            data={chartData}
+            // data={chartData}
             title="Lumpsum Investment Growth"
             description="Your one-time investment journey over time"
           />
