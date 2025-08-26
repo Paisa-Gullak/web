@@ -3,99 +3,66 @@
 import { useState } from "react";
 import InputSlider from "./inputSlider";
 import { IconCurrencyRupee, IconRefresh } from "@tabler/icons-react";
-import { ChartAreaGradient } from "@/components/ui/area-chart-gradient";
+import { ChartAreaGradient } from "./ui/area-chart-gradient";
 import { formatINR } from "@/lib/currencyFormatter";
 
-export default function SipCalc() {
-  const [monthlyInvestment, setMonthlyInvestment] = useState<number>(10000);
-  const [expectedRoi, setExpectedRoi] = useState<number>(15);
-  const [tenure, setTenure] = useState<number>(10);
+export default function LumpsumCalc() {
+  const [investmentAmt, setInvestmentAmt] = useState<number>(100000);
+  const [expectedRoi, sertExpectedRoi] = useState<number>(15);
+  const [tenure, settenure] = useState<number>(10);
 
+  // reset function
   const handleReset = () => {
-    setMonthlyInvestment(10000);
-    setExpectedRoi(15);
-    setTenure(10);
+    setInvestmentAmt(100000);
+    sertExpectedRoi(15);
+    settenure(10);
   };
 
-  const calculateSip = () => {
-    const P = monthlyInvestment;
-    const annualRate = expectedRoi / 100; // Convert percentage to decimal
-    const r = annualRate / 12; // Monthly interest rate
-    const n = tenure * 12; // Total number of months
+  const calculateLumpsum = () => {
+    const P = investmentAmt;
+    const r = expectedRoi / 100;
+    const t = tenure;
 
-    // Correct SIP formula
-    const futureValue = P * (((Math.pow(1 + r, n) - 1) / r) * (1 + r));
+    const futureValue = P * Math.pow(1 + r, t);
 
-    const investedAmount = P * n; // Total invested = monthly amount × months
-    const estimatedReturns = futureValue - investedAmount;
+    const invested = P;
+    const expectedReturn = futureValue - P;
+    const totalValue = futureValue;
 
     return {
-      totalFutureValue: Math.floor(futureValue),
-      totalinvestedAmount: Math.floor(investedAmount),
-      estimatedRateOfReturn: Math.floor(estimatedReturns),
+      totalInvested: Math.floor(invested),
+      expectedRateOfReturn: Math.floor(expectedReturn),
+      totalFutureValue: Math.floor(totalValue),
     };
   };
-
-  const { totalFutureValue, totalinvestedAmount, estimatedRateOfReturn } =
-    calculateSip();
-
-  const generateChartData = () => {
-    const P = monthlyInvestment;
-    const annualRate = expectedRoi / 100;
-    const r = annualRate / 12;
-
-    const data = [];
-
-    // Generate data for each year
-    for (let year = 1; year <= tenure; year++) {
-      const months = year * 12;
-
-      // Calculate invested amount up to this year
-      const investedAmount = P * months;
-
-      // Calculate future value up to this year
-      const futureValue = P * (((Math.pow(1 + r, months) - 1) / r) * (1 + r));
-
-      // Calculate returns up to this year
-      const returns = futureValue - investedAmount;
-
-      data.push({
-        year: `Yr ${year}`,
-        invested: Math.round(investedAmount),
-        returns: Math.round(returns),
-        total: Math.round(futureValue),
-      });
-    }
-    return data;
-  };
-  const chartData = generateChartData();
+  const { totalInvested, expectedRateOfReturn, totalFutureValue } =
+    calculateLumpsum();
 
   return (
     <>
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-auto">
-        {/* Calculator */}
+      <section className="grid lg:grid-cols-2 sm:grid-cols-1 gap-3 h-auto">
         <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5">
           <InputSlider
             width={150}
-            label="Monthly Investment"
+            label="Investment Amount"
             symbol={<IconCurrencyRupee size={18} />}
             symbolPosition="start"
-            min={0}
-            max={200000}
+            min={100}
+            max={1000000}
             step={100}
-            value={monthlyInvestment}
-            onChange={setMonthlyInvestment}
+            value={investmentAmt}
+            onChange={setInvestmentAmt}
           />
           <InputSlider
             width={100}
-            label="Expected rate of return (p.a)"
+            label="Expected rate of return"
             symbol={"%"}
             symbolPosition="end"
             min={1}
             max={40}
             step={1}
             value={expectedRoi}
-            onChange={setExpectedRoi}
+            onChange={sertExpectedRoi}
           />
           <InputSlider
             width={100}
@@ -106,7 +73,7 @@ export default function SipCalc() {
             max={40}
             step={1}
             value={tenure}
-            onChange={setTenure}
+            onChange={settenure}
           />
           <div className="flex justify-end">
             <button
@@ -120,6 +87,7 @@ export default function SipCalc() {
             </button>
           </div>
         </div>
+
         {/* Chart */}
         <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5">
           <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-3">
@@ -132,7 +100,7 @@ export default function SipCalc() {
                   <IconCurrencyRupee size={24} />
                 </span>
                 <span className="overflow-x-scroll scrollbar-hide">
-                  {formatINR(totalinvestedAmount)}
+                  {formatINR(totalInvested)}
                 </span>
               </div>
             </div>
@@ -145,7 +113,7 @@ export default function SipCalc() {
                   <IconCurrencyRupee size={24} />
                 </span>
                 <span className="overflow-x-scroll scrollbar-hide">
-                  {formatINR(estimatedRateOfReturn)}
+                  {formatINR(expectedRateOfReturn)}
                 </span>
               </div>
             </div>
@@ -164,9 +132,9 @@ export default function SipCalc() {
             </div>
           </div>
           <ChartAreaGradient
-            data={chartData}
-            title="SIP Investment Growth"
-            description="Your investment journey over time"
+            // data={chartData}
+            title="Lumpsum Investment Growth"
+            description="Your one-time investment journey over time"
           />
         </div>
       </section>

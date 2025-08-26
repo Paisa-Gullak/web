@@ -1,3 +1,5 @@
+import LumpsumCalc from "@/components/lumpsum-calc";
+
 export default function LumpsumCalculator() {
   return (
     <>
@@ -16,6 +18,8 @@ export default function LumpsumCalculator() {
             Lumpsum Calculator shows how your money can grow over time with the
             power of compounding. Simple, fast & accurate—start planning today.
           </p>
+
+          <LumpsumCalc />
         </div>
       </section>
     </>

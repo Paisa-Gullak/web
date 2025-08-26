@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Slider } from "./ui/slider";
 
-type InputSliderProps = {
+interface InputSliderProps {
   label: string;
   symbol?: string | ReactNode;
   symbolPosition: "start" | "end";
@@ -11,7 +11,7 @@ type InputSliderProps = {
   step?: number;
   width: number;
   onChange: (value: number) => void;
-};
+}
 
 export default function InputSlider({
   label,
