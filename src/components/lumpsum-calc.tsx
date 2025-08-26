@@ -38,6 +38,32 @@ export default function LumpsumCalc() {
   const { totalInvested, expectedRateOfReturn, totalFutureValue } =
     calculateLumpsum();
 
+  // Generate data for chart
+  const generateChartData = () => {
+    const P = investmentAmt; // Initial lump sum investment
+    const r = expectedRoi / 100; // Annual interest rate as decimal
+
+    const data = [];
+
+    // Generate data for each year
+    for (let year = 1; year <= tenure; year++) {
+      const investedAmount = P;
+
+      const futureValue = P * Math.pow(1 + r, year);
+
+      const returns = futureValue - investedAmount;
+
+      data.push({
+        year: `Yr ${year}`,
+        invested: Math.floor(investedAmount),
+        returns: Math.floor(returns),
+        total: Math.floor(futureValue),
+      });
+    }
+    return data;
+  };
+  const chartData = generateChartData();
+
   return (
     <>
       <section className="grid lg:grid-cols-2 sm:grid-cols-1 gap-3 h-auto">
@@ -132,7 +158,7 @@ export default function LumpsumCalc() {
             </div>
           </div>
           <ChartAreaGradient
-            // data={chartData}
+            data={chartData}
             title="Lumpsum Investment Growth"
             description="Your one-time investment journey over time"
           />
