@@ -32,25 +32,25 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="https://www.facebook.com/profile.php?id=61577822617184"
+                href={"https://www.facebook.com/profile.php?id=61577822617184"}
                 className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
               >
                 <IconBrandFacebook size={20} />
               </Link>
               <Link
-                href="https://x.com/paisagullak"
+                href={"https://x.com/paisagullak"}
                 className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
               >
                 <IconBrandX size={20} />
               </Link>
               <Link
-                href="https://www.instagram.com/paisagullak/"
+                href={"https://www.instagram.com/paisagullak/"}
                 className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
               >
                 <IconBrandInstagram size={22} />
               </Link>
               <Link
-                href="https://www.linkedin.com/company/paisa-gullak/"
+                href={"https://www.linkedin.com/company/paisa-gullak/"}
                 className="text-gray-300 mt-[1.2px] hover:text-paisa-gold transition-colors duration-200"
               >
                 <IconBrandLinkedin size={20} />
@@ -64,7 +64,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/"
+                  href={"/"}
                   className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
                 >
                   Home
@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/mutual-funds"
+                  href={"/mutual-funds"}
                   className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
                 >
                   Mutual Funds
@@ -80,7 +80,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/insurance"
+                  href={"/insurance"}
                   className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
                 >
                   Insurance
@@ -88,7 +88,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href={"/about"}
                   className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
                 >
                   About Us
@@ -96,7 +96,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/calculators"
+                  href={"/calculators"}
                   className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
                 >
                   Calculators
@@ -135,7 +135,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href={"/contact"}
                   className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
                 >
                   Contact Us
@@ -143,7 +143,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/faqs"
+                  href={"/faqs"}
                   className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
                 >
                   FAQ's
@@ -175,12 +175,12 @@ const Footer = () => {
         <div className="border-t border-paisa-light-blue mt-8 pt-8 text-center">
           <p className="text-gray-300">
             © 2025 Paisa Gullak. All rights reserved. |
-            <a
-              href="#"
+            <Link
+              href={"/privacy-policy"}
               className="hover:text-paisa-gold transition-colors duration-200 ml-1"
             >
               Privacy Policy
-            </a>{" "}
+            </Link>{" "}
             |
             <a
               href="#"
