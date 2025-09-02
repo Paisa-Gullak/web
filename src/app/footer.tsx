@@ -182,12 +182,12 @@ const Footer = () => {
               Privacy Policy
             </Link>{" "}
             |
-            <a
-              href="#"
+            <Link
+              href={"/terms-of-service"}
               className="hover:text-paisa-gold transition-colors duration-200 ml-1"
             >
               Terms of Service
-            </a>
+            </Link>
           </p>
         </div>
       </div>

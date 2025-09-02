@@ -304,6 +304,8 @@ export default function PrivacyPolicy() {
     },
   ];
 
+  // Big Lists
+
   const personalInfoList = [
     {
       id: 1,
@@ -927,7 +929,7 @@ export default function PrivacyPolicy() {
             </p> */}
 
             {/* General Inquiries */}
-            <h3 className="text-2xl md:text-4xl font-bold text-paisa-blue mb-6">
+            <h3 className="text-xl md:text-2xl font-semibold text-paisa-gold my-6">
               General Inquiries:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
@@ -952,7 +954,7 @@ export default function PrivacyPolicy() {
               to the exclusive jurisdiction of courts in Jammu, J&K, India.
             </p>
 
-            <hr className="max-w- text-paisa-blue my-6" />
+            <hr className="max-w-6xl text-paisa-blue my-6" />
 
             {/* Note */}
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
