@@ -677,8 +677,10 @@ export default function PrivacyPolicy() {
               Aadhaar Usage Policy
             </h2>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Voluntary Provision:</strong> Providing your Aadhaar
-              number is voluntary and used solely for:
+              <strong className="text-paisa-blue font-semibold">
+                Voluntary Provision:
+              </strong>{" "}
+              Providing your Aadhaar number is voluntary and used solely for:
             </p>
             <ul className="text-lg text-gray-700 max-w-6xl mb-4">
               {aadhaarUseage.map((aadhaarItem) => (
@@ -689,8 +691,10 @@ export default function PrivacyPolicy() {
               ))}
             </ul>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>No Direct Storage:</strong> We do not directly store your
-              complete Aadhaar number. We use:
+              <strong className="text-paisa-blue font-semibold">
+                No Direct Storage:
+              </strong>{" "}
+              We do not directly store your complete Aadhaar number. We use:
             </p>
             <ul className="text-lg text-gray-700 max-w-6xl mb-4">
               {aadhUseListTwo.map((aadhTwoItem) => (
@@ -701,8 +705,11 @@ export default function PrivacyPolicy() {
               ))}
             </ul>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Alternative Options:</strong> You may choose offline
-              account opening procedures that do not require Aadhaar sharing.
+              <strong className="text-paisa-blue font-semibold">
+                Alternative Options:
+              </strong>{" "}
+              You may choose offline account opening procedures that do not
+              require Aadhaar sharing.
             </p>
 
             {/* Your Rights and Choices */}
@@ -714,25 +721,36 @@ export default function PrivacyPolicy() {
             </p>
             <div>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
-                <strong>Access and Correction:</strong> Request access to your
-                personal information and correction of any inaccuracies
+                <strong className="text-paisa-blue font-semibold">
+                  Access and Correction:
+                </strong>{" "}
+                Request access to your personal information and correction of
+                any inaccuracies
               </p>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
                 <strong>Data Portability:</strong> Request transfer of your data
                 to another platform (subject to technical feasibility)
               </p>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
-                <strong>Deletion:</strong> Request deletion of your account and
-                associated data (subject to legal retention requirements)
+                <strong className="text-paisa-blue font-semibold">
+                  Deletion:
+                </strong>{" "}
+                Request deletion of your account and associated data (subject to
+                legal retention requirements)
               </p>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
-                <strong>Opt-out:</strong> Unsubscribe from marketing
-                communications while continuing to receive service-related
-                notifications
+                <strong className="text-paisa-blue font-semibold">
+                  Opt-out:
+                </strong>{" "}
+                Unsubscribe from marketing communications while continuing to
+                receive service-related notifications
               </p>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
-                <strong>Consent Withdrawal:</strong> Withdraw previously given
-                consents (may affect service availability)
+                <strong className="text-paisa-blue font-semibold">
+                  Consent Withdrawal:
+                </strong>{" "}
+                Withdraw previously given consents (may affect service
+                availability)
               </p>
             </div>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
@@ -790,8 +808,10 @@ export default function PrivacyPolicy() {
               (GDPR), you have additional rights including:
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Legal Basis for Processing:</strong> We process your data
-              based on:
+              <strong className="text-paisa-blue font-semibold">
+                Legal Basis for Processing:
+              </strong>{" "}
+              We process your data based on:
             </p>
             <ul className="text-lg text-gray-700 max-w-6xl mb-4">
               {gdprCompList.map((gdprItem) => (
@@ -813,8 +833,10 @@ export default function PrivacyPolicy() {
               ))}
             </ul>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Data Protection Officer:</strong> For GDPR-related
-              queries, contact our Data Protection Officer at
+              <strong className="text-paisa-blue font-semibold">
+                Data Protection Officer:
+              </strong>{" "}
+              For GDPR-related queries, contact our Data Protection Officer at
               <span className="text-paisa-gold italic underline">
                 info@paisagullak.com
               </span>
@@ -893,13 +915,13 @@ export default function PrivacyPolicy() {
               Privacy-Related Queries:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Email:</strong>
+              <strong className="text-paisa-blue font-semibold">Email:</strong>
               <span className="text-paisa-gold italic underline">
                 info@paisagullak.com | support@paisagullak.com
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Phone:</strong>
+              <strong className="text-paisa-blue font-semibold">Phone:</strong>
               <span className="text-paisa-gold italic underline">
                 +91 600-541-1368
               </span>
@@ -910,19 +932,19 @@ export default function PrivacyPolicy() {
               Grievance Officer:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Name:</strong>
+              <strong className="text-paisa-blue font-semibold">Name:</strong>
               <span className="text-paisa-gold italic underline">
                 Update Soon
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Email:</strong>
+              <strong className="text-paisa-blue font-semibold">Email:</strong>
               <span className="text-paisa-gold italic underline">
                 Update Soon
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Address:</strong>
+              <strong className="text-paisa-blue font-semibold">Address:</strong>
               <span className="text-paisa-gold italic underline">
                 Update Soon
               </span>
@@ -933,13 +955,15 @@ export default function PrivacyPolicy() {
               General Inquiries:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Email:</strong>
+              <strong className="text-paisa-blue font-semibold">Email:</strong>
               <span className="text-paisa-gold italic underline">
                 info@paisagullak.com
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Website:</strong>
+              <strong className="text-paisa-blue font-semibold">
+                Website:
+              </strong>
               <Link href={"/"} className="text-paisa-gold italic underline">
                 https://paisagullak.com
               </Link>
@@ -958,9 +982,10 @@ export default function PrivacyPolicy() {
 
             {/* Note */}
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Note:</strong> This Privacy Policy is an electronic record
-              generated by computer systems and does not require physical or
-              digital signatures as per the Information Technology Act, 2000.
+              <strong className="text-paisa-blue font-semibold">Note:</strong>{" "}
+              This Privacy Policy is an electronic record generated by computer
+              systems and does not require physical or digital signatures as per
+              the Information Technology Act, 2000.
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-16">
               We encourage you to read this Privacy Policy carefully and contact
