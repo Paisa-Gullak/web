@@ -2,6 +2,7 @@ import {
   IconChartHistogram,
   IconTax,
   IconArrowRight,
+  IconChartFunnelFilled,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -24,6 +25,15 @@ export default function CalculatorsPage() {
         "Calculate returns on your one-time investment with our lumpsum calculator. See how your single investment can grow over time with compound interest.",
       link: "/calculators/lumpsum-calculator",
       linkText: "Multiply Your Investment",
+    },
+    {
+      id: 3,
+      icon: <IconChartFunnelFilled className="text-paisa-gold" size={24} />,
+      title: "Step-Up SIP Calculator",
+      description:
+        "Turn small SIP increases into powerful wealth creation. With every step-up, compounding works harder, helping you move closer to your financial goals with ease.",
+      link: "/calculators/step-up-sip-calculator",
+      linkText: "Level Up Like a Pro",
     },
   ];
 
