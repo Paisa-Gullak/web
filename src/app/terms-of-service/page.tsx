@@ -757,36 +757,36 @@ export default function TermsOfService() {
             </ul>
 
             {/* Grievance Redressal */}
-            <h2 className="text-2xl md:text-4xl font-bold text-paisa-blue mb-6">
+            {/* <h2 className="text-2xl md:text-4xl font-bold text-paisa-blue mb-6">
               Grievance Redressal
             </h2>
             <p className="text-lg text-gray-700 max-w-6xl mb-4">
               For any grievances or complaints:
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Grievance Officer:</strong>
+              <strong className="text-paisa-blue font-semibold">Grievance Officer:</strong>
               <span className="text-paisa-gold italic underline">
                 Update Soon
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Email:</strong>
+              <strong className="text-paisa-blue font-semibold">Email:</strong>
               <span className="text-paisa-gold italic underline">
                 Update Soon
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Response Time:</strong>
+              <strong className="text-paisa-blue font-semibold">Response Time:</strong>
               <span className="text-paisa-gold italic underline">
                 We aim to resolve complaints within 30 days
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Escalation:</strong>
+              <strong className="text-paisa-blue font-semibold">Escalation:</strong>
               <span className="text-paisa-gold italic underline">
                 Unresolved grievances may be escalated to regulatory authorities
               </span>
-            </p>
+            </p> */}
 
             {/* Changes to Terms */}
             <h2 className="text-2xl md:text-4xl font-bold text-paisa-blue mb-6">
@@ -811,7 +811,7 @@ export default function TermsOfService() {
               Customer Support:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Email:</strong>{" "}
+              <strong className="text-paisa-blue font-semibold">Email:</strong>{" "}
               <span className="text-paisa-gold italic underline">
                 info@paisagullak.com
               </span>{" "}
@@ -821,13 +821,15 @@ export default function TermsOfService() {
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Phone:</strong>{" "}
+              <strong className="text-paisa-blue font-semibold">Phone:</strong>{" "}
               <span className="text-paisa-gold italic underline">
                 +91 600-541-1368
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Address:</strong>{" "}
+              <strong className="text-paisa-blue font-semibold">
+                Address:
+              </strong>{" "}
               <span className="text-paisa-gold italic underline">
                 Vill. Palli Morh, Tehsil Bishnah, Jammu - 181133
               </span>
@@ -838,7 +840,7 @@ export default function TermsOfService() {
               Legal Queries:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Email:</strong>{" "}
+              <strong className="text-paisa-blue font-semibold">Email:</strong>{" "}
               <span className="text-paisa-gold italic underline">
                 info@paisagullak.com
               </span>
@@ -848,11 +850,13 @@ export default function TermsOfService() {
 
             {/* Important Notice */}
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong>Important Notice:</strong> These Terms constitute an
-              electronic record under the Information Technology Act, 2000, and
-              do not require physical or digital signatures. By using our
-              Platform, you acknowledge your understanding and acceptance of
-              these Terms.
+              <strong className="text-paisa-blue font-semibold">
+                Important Notice:
+              </strong>{" "}
+              These Terms constitute an electronic record under the Information
+              Technology Act, 2000, and do not require physical or digital
+              signatures. By using our Platform, you acknowledge your
+              understanding and acceptance of these Terms.
             </p>
           </div>
         </section>
