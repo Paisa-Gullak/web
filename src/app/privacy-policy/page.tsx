@@ -677,7 +677,7 @@ export default function PrivacyPolicy() {
               Aadhaar Usage Policy
             </h2>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">
+              <strong className="text-paisa-blue font-bold">
                 Voluntary Provision:
               </strong>{" "}
               Providing your Aadhaar number is voluntary and used solely for:
@@ -691,7 +691,7 @@ export default function PrivacyPolicy() {
               ))}
             </ul>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">
+              <strong className="text-paisa-blue font-bold">
                 No Direct Storage:
               </strong>{" "}
               We do not directly store your complete Aadhaar number. We use:
@@ -705,11 +705,11 @@ export default function PrivacyPolicy() {
               ))}
             </ul>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">
+              <strong className="text-paisa-blue font-bold">
                 Alternative Options:
               </strong>{" "}
-              You may choose offline account opening procedures that do not
-              require Aadhaar sharing.
+              You may choose other account opening procedures (like: Driving
+              License, etc) that do not require Aadhaar sharing.
             </p>
 
             {/* Your Rights and Choices */}
@@ -721,7 +721,7 @@ export default function PrivacyPolicy() {
             </p>
             <div>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
-                <strong className="text-paisa-blue font-semibold">
+                <strong className="text-paisa-blue font-bold">
                   Access and Correction:
                 </strong>{" "}
                 Request access to your personal information and correction of
@@ -732,21 +732,17 @@ export default function PrivacyPolicy() {
                 to another platform (subject to technical feasibility)
               </p>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
-                <strong className="text-paisa-blue font-semibold">
-                  Deletion:
-                </strong>{" "}
+                <strong className="text-paisa-blue font-bold">Deletion:</strong>{" "}
                 Request deletion of your account and associated data (subject to
                 legal retention requirements)
               </p>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
-                <strong className="text-paisa-blue font-semibold">
-                  Opt-out:
-                </strong>{" "}
+                <strong className="text-paisa-blue font-bold">Opt-out:</strong>{" "}
                 Unsubscribe from marketing communications while continuing to
                 receive service-related notifications
               </p>
               <p className="text-lg text-gray-700 max-w-6xl mb-6">
-                <strong className="text-paisa-blue font-semibold">
+                <strong className="text-paisa-blue font-bold">
                   Consent Withdrawal:
                 </strong>{" "}
                 Withdraw previously given consents (may affect service
@@ -808,7 +804,7 @@ export default function PrivacyPolicy() {
               (GDPR), you have additional rights including:
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">
+              <strong className="text-paisa-blue font-bold">
                 Legal Basis for Processing:
               </strong>{" "}
               We process your data based on:
@@ -833,7 +829,7 @@ export default function PrivacyPolicy() {
               ))}
             </ul>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">
+              <strong className="text-paisa-blue font-bold">
                 Data Protection Officer:
               </strong>{" "}
               For GDPR-related queries, contact our Data Protection Officer at
@@ -915,13 +911,13 @@ export default function PrivacyPolicy() {
               Privacy-Related Queries:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">Email:</strong>
+              <strong className="text-paisa-blue font-bold">Email:</strong>
               <span className="text-paisa-gold italic underline">
                 info@paisagullak.com | support@paisagullak.com
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">Phone:</strong>
+              <strong className="text-paisa-blue font-bold">Phone:</strong>
               <span className="text-paisa-gold italic underline">
                 +91 600-541-1368
               </span>
@@ -932,19 +928,19 @@ export default function PrivacyPolicy() {
               Grievance Officer:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">Name:</strong>
+              <strong className="text-paisa-blue font-bold">Name:</strong>
               <span className="text-paisa-gold italic underline">
                 Update Soon
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">Email:</strong>
+              <strong className="text-paisa-blue font-bold">Email:</strong>
               <span className="text-paisa-gold italic underline">
                 Update Soon
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">Address:</strong>
+              <strong className="text-paisa-blue font-bold">Address:</strong>
               <span className="text-paisa-gold italic underline">
                 Update Soon
               </span>
@@ -955,15 +951,13 @@ export default function PrivacyPolicy() {
               General Inquiries:
             </h3>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">Email:</strong>
+              <strong className="text-paisa-blue font-bold">Email:</strong>
               <span className="text-paisa-gold italic underline">
                 info@paisagullak.com
               </span>
             </p>
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">
-                Website:
-              </strong>
+              <strong className="text-paisa-blue font-bold">Website:</strong>
               <Link href={"/"} className="text-paisa-gold italic underline">
                 https://paisagullak.com
               </Link>
@@ -982,8 +976,8 @@ export default function PrivacyPolicy() {
 
             {/* Note */}
             <p className="text-lg text-gray-700 max-w-6xl mb-6">
-              <strong className="text-paisa-blue font-semibold">Note:</strong>{" "}
-              This Privacy Policy is an electronic record generated by computer
+              <strong className="text-paisa-blue font-bold">Note:</strong> This
+              Privacy Policy is an electronic record generated by computer
               systems and does not require physical or digital signatures as per
               the Information Technology Act, 2000.
             </p>
