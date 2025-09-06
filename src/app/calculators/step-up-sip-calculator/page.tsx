@@ -1,3 +1,5 @@
+import StepUpSipCalc from "@/components/step-up-sip-calc";
+
 export default function StepUpSipCalculator() {
   return (
     <>
@@ -17,9 +19,8 @@ export default function StepUpSipCalculator() {
             magic. Start small, grow big, and let your money hustle harder than
             you do.
           </p>
-          <h1 className="text-3xl lg:text-5xl font-bold text-paisa-blue ">
-            Calculator coming soon!
-          </h1>
+
+          <StepUpSipCalc />
         </div>
       </section>
     </>
