@@ -53,7 +53,7 @@ export default function CalculatorsPage() {
       title: "SWP Calculator",
       description:
         "Plan your withdrawals smartly and make your money last longer. Our SWP Calculator helps you estimate steady payouts while keeping your investments growing.",
-      link: "/calculators/step-up-sip-calculator",
+      link: "/calculators/swp-calculator",
       linkText: "Plan My Withdrawals",
     },
     {
@@ -62,7 +62,7 @@ export default function CalculatorsPage() {
       title: "Step-Up SIP Calculator",
       description:
         "Transfer your investments smartly and reduce market risk. Our STP Calculator helps you plan smooth and disciplined fund transfers for better growth.",
-      link: "/calculators/step-up-sip-calculator",
+      link: "/calculators/stp-calculator",
       linkText: "Grow with Stability",
     },
   ];
