@@ -61,9 +61,9 @@ export default function SipCalc() {
 
       data.push({
         year: `Yr ${year}`,
-        invested: Math.round(investedAmount),
-        returns: Math.round(returns),
-        total: Math.round(futureValue),
+        invested: Math.floor(investedAmount),
+        returns: Math.floor(returns),
+        total: Math.floor(futureValue),
       });
     }
     return data;
