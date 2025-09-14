@@ -3,6 +3,9 @@ import {
   IconTax,
   IconArrowRight,
   IconChartFunnelFilled,
+  IconAlertTriangle,
+  IconWallet,
+  IconSwitchHorizontal,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -35,12 +38,39 @@ export default function CalculatorsPage() {
       link: "/calculators/step-up-sip-calculator",
       linkText: "Level Up Like a Pro",
     },
+    {
+      id: 4,
+      icon: <IconAlertTriangle className="text-paisa-gold" size={24} />,
+      title: "Risk Calculator",
+      description:
+        "Discover your risk profile in just a few steps. Get clarity on the protection you need to safeguard what matters most.",
+      link: "/calculators/risk-calculator",
+      linkText: "Check My Risk Level",
+    },
+    {
+      id: 5,
+      icon: <IconWallet className="text-paisa-gold" size={24} />,
+      title: "SWP Calculator",
+      description:
+        "Plan your withdrawals smartly and make your money last longer. Our SWP Calculator helps you estimate steady payouts while keeping your investments growing.",
+      link: "/calculators/swp-calculator",
+      linkText: "Plan My Withdrawals",
+    },
+    {
+      id: 6,
+      icon: <IconSwitchHorizontal className="text-paisa-gold" size={24} />,
+      title: "Step-Up SIP Calculator",
+      description:
+        "Transfer your investments smartly and reduce market risk. Our STP Calculator helps you plan smooth and disciplined fund transfers for better growth.",
+      link: "/calculators/stp-calculator",
+      linkText: "Grow with Stability",
+    },
   ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-paisa-cream to-white py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-paisa-cream to-white py-16 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold text-paisa-blue mb-6">

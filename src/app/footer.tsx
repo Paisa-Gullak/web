@@ -126,12 +126,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/calculators/risk-calculator"}
                   className="text-gray-300 hover:text-paisa-gold transition-colors duration-200"
                 >
                   Risk Calculator
-                </a>
+                </Link>
               </li>
               <li>
                 <Link

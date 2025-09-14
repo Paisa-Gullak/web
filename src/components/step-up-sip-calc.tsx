@@ -196,7 +196,7 @@ export default function StepUpSipCalc() {
           </div>
           <ChartAreaGradient
             data={chartData}
-            title="SIP Investment Growth"
+            title="Step-Up SIP Investment Growth"
             description="Your investment journey over time"
           />
         </div>
