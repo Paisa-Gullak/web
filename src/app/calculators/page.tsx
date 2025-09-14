@@ -59,7 +59,7 @@ export default function CalculatorsPage() {
     {
       id: 6,
       icon: <IconSwitchHorizontal className="text-paisa-gold" size={24} />,
-      title: "Step-Up SIP Calculator",
+      title: "STP Calculator",
       description:
         "Transfer your investments smartly and reduce market risk. Our STP Calculator helps you plan smooth and disciplined fund transfers for better growth.",
       link: "/calculators/stp-calculator",
