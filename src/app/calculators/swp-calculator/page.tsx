@@ -1,3 +1,29 @@
-export default function SWPCalc() {
-  return <h1>SWP Calculator</h1>;
+import SWPCalc from "../../../components/swp-calc";
+
+export default function SWPCalculator() {
+  return (
+    <>
+      <section className="bg-gradient-to-br from-paisa-cream to-white py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="md:flex flex-row items-center gap-3 mb-3">
+            <h1 className="text-3xl lg:text-5xl font-bold text-paisa-blue ">
+              SWP Calculator{" "}
+            </h1>
+            <span className="text-lg font-semibold text-paisa-gold">
+              (Systematic Withdrawl Plan)
+            </span>
+          </div>
+          <h2 className="text-xl lg:text-2xl text-paisa-light-blue font-semibold mb-3">
+            Turn investments into steady income
+          </h2>
+          <p className="max-w-3xl text-lg text-gray-600 mb-6">
+            Plan smart withdrawals with our SWP Calculator. Track payouts,
+            growth, and investment balance instantly.
+          </p>
+
+          <SWPCalc />
+        </div>
+      </section>
+    </>
+  );
 }
