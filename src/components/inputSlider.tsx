@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Slider } from "./ui/slider";
+import { formatINR } from "@/lib/currencyFormatter";
 
 interface InputSliderProps {
   label: string;
@@ -11,6 +12,13 @@ interface InputSliderProps {
   step?: number;
   width: number;
   onChange: (value: number) => void;
+}
+
+// This function helps in parsing the formatted value
+function parseNumberFromString(value: string): number {
+  // Removes everything except digits
+  const cleaned = value.replace(/[^\d]/g, "");
+  return Number(cleaned) || 0;
 }
 
 export default function InputSlider({
@@ -28,7 +36,7 @@ export default function InputSlider({
   const getPadding = () => {
     if (symbolPosition === "start") {
       if (String(symbol).length === 1) {
-        return "pl-6.5";
+        return "pl-6";
       } else if (String(symbol).length === 2) {
         return "pl-8";
       } else {
@@ -71,8 +79,11 @@ export default function InputSlider({
               type="text"
               style={{ width: `${width}px` }}
               className={`px-3 py-2 bg-paisa-cream text-paisa-gold font-semibold rounded-lg focus:ring-2 focus:ring-paisa-gold focus:border-transparent transition-all duration-200 text-right ${getPadding()}`}
-              value={value}
-              onChange={(e) => onChange(Number(e.target.value))}
+              value={formatINR(value)}
+              onChange={(e) => {
+                const num = parseNumberFromString(e.target.value);
+                onChange(num);
+              }}
               min={min}
               max={max}
               step={step}
