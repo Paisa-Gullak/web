@@ -18,7 +18,7 @@ interface InputSliderProps {
 function parseNumberFromString(value: string): number {
   // Removes everything except digits
   const cleaned = value.replace(/[^\d]/g, "");
-  return Number(cleaned) || 0;
+  return Number(cleaned);
 }
 
 export default function InputSlider({

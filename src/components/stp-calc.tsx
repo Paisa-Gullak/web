@@ -1,0 +1,210 @@
+"use client";
+
+import { useState } from "react";
+import InputSlider from "./inputSlider";
+import { IconCurrencyRupee, IconRefresh } from "@tabler/icons-react";
+import { formatINR } from "@/lib/currencyFormatter";
+import { set } from "better-auth";
+
+export default function StpCalc() {
+  const [investedAmt, setInvestedAmt] = useState<number>(3000000);
+  const [sourceExpectedRoi, setSourceExpectedRoi] = useState<number>(8);
+  const [transferAmt, setTransferAmt] = useState<number>(10000);
+  const [destExpectedRoi, setDestExpectedRoi] = useState<number>(15);
+  const [tenure, setTenure] = useState<number>(5);
+
+  const handleReset = () => {
+    setInvestedAmt(3000000);
+    setSourceExpectedRoi(8);
+    setTransferAmt(10000);
+    setDestExpectedRoi(15);
+    setTenure(5);
+  };
+
+  const calculateSTP = () => {
+    const P = investedAmt;
+    const r1 = sourceExpectedRoi / 100 / 12;
+    const T = transferAmt;
+    const r2 = destExpectedRoi / 100 / 12;
+    const t = tenure * 12;
+
+    // Claculate No. of Transfers
+    const actualTransfer = Math.min(t, Math.floor(P / T));
+    const n = actualTransfer;
+
+    // Calculation of Source Fund
+    const sourceInitial = P * Math.pow(1 + r1, t);
+    let sourceFinal = 0;
+    for (let i = 1; i <= n; i++) {
+      sourceFinal += T * Math.pow(1 + r1, t - i);
+    }
+    const sourceFinalValue = sourceInitial - sourceFinal;
+
+    // Calculation for destinaltion fund
+    let destinationFinalValue = 0;
+    for (let i = 1; i <= n; i++) {
+      destinationFinalValue += T * Math.pow(1 + r2, n - i);
+    }
+
+    const totalFinalValue = sourceFinalValue + destinationFinalValue;
+
+    return {
+      investedAmount: Math.floor(P),
+      sourceFundValue: Math.floor(sourceFinalValue),
+      amountTransfered: Math.floor(destinationFinalValue),
+      totalValue: Math.floor(totalFinalValue),
+    };
+  };
+
+  const { investedAmount, sourceFundValue, amountTransfered, totalValue } =
+    calculateSTP();
+
+  return (
+    <>
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-auto">
+        {/* Calculator */}
+        <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5 ">
+          <div className="mb-6">
+            <h1 className="text-lg font-semibold text-paisa-blue mb-5">
+              Source Fund
+            </h1>
+            <InputSlider
+              width={180}
+              label="Invested Amount"
+              symbol={<IconCurrencyRupee size={18} />}
+              symbolPosition="start"
+              min={100}
+              max={20000000}
+              step={100}
+              value={investedAmt}
+              onChange={setInvestedAmt}
+            />
+            <InputSlider
+              width={100}
+              label="Expected Rate of Return"
+              symbol={"%"}
+              symbolPosition="end"
+              min={1}
+              max={40}
+              step={1}
+              value={sourceExpectedRoi}
+              onChange={setSourceExpectedRoi}
+            />
+          </div>
+          <hr className="my-6" />
+          <div>
+            <h1 className="text-lg font-semibold text-paisa-blue mb-5">
+              Destination Fund
+            </h1>
+            <InputSlider
+              width={150}
+              label="Transfer Amount per month"
+              symbol={<IconCurrencyRupee size={18} />}
+              symbolPosition="start"
+              min={100}
+              max={200000}
+              step={100}
+              value={transferAmt}
+              onChange={setTransferAmt}
+            />
+            <InputSlider
+              width={100}
+              label="Expected Rate of Return"
+              symbol={"%"}
+              symbolPosition="end"
+              min={1}
+              max={40}
+              step={1}
+              value={destExpectedRoi}
+              onChange={setDestExpectedRoi}
+            />
+            <InputSlider
+              width={100}
+              label="Time Period"
+              symbol={"year"}
+              symbolPosition="end"
+              min={1}
+              max={40}
+              step={1}
+              value={tenure}
+              onChange={setTenure}
+            />
+          </div>
+
+          <div className="flex justify-end">
+            <button
+              onClick={handleReset}
+              className="btn-secondary flex gap-2 items-center cursor-pointer text-right"
+            >
+              Reset{" "}
+              <span>
+                <IconRefresh size={22} />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5">
+          <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-3">
+            <div className="card py-4 px-4">
+              <span className="font-medium text-paisa-blue text-[12px] pl-1.5">
+                Invested Amount:
+              </span>
+              <div className="flex items-center font-semibold text-paisa-blue text-xl">
+                <span>
+                  <IconCurrencyRupee size={24} />
+                </span>
+                <span className="overflow-x-scroll scrollbar-hide">
+                  {formatINR(investedAmount)}
+                </span>
+              </div>
+            </div>
+            <div className="card py-4 px-4">
+              <span className="font-medium text-paisa-blue text-[12px] pl-1.5">
+                Bal. Amount (Source Fund):
+              </span>
+              <div className="flex items-center justify-start font-semibold text-paisa-blue text-xl">
+                <span>
+                  <IconCurrencyRupee size={24} />
+                </span>
+                <span className="overflow-x-scroll scrollbar-hide">
+                  {formatINR(sourceFundValue)}
+                </span>
+              </div>
+            </div>
+            <div className="card py-4 px-4">
+              <span className="font-medium text-paisa-blue text-[12px] pl-1.5">
+                Amount Transfered (Detination Fund):
+              </span>
+              <div className="flex items-center justify-start font-semibold text-paisa-blue text-xl">
+                <span>
+                  <IconCurrencyRupee size={24} />
+                </span>
+                <span className="overflow-x-scroll scrollbar-hide">
+                  {formatINR(amountTransfered)}
+                </span>
+              </div>
+            </div>
+            <div className="card py-4 px-4">
+              <span className="font-medium text-paisa-blue text-[12px] pl-1.5">
+                Total Value:
+              </span>
+              <div className="flex items-center justify-start font-semibold text-paisa-blue text-xl">
+                <span>
+                  <IconCurrencyRupee size={24} />
+                </span>
+                <span className="overflow-x-scroll scrollbar-hide">
+                  {formatINR(totalValue)}
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* <ChartAreaGradient
+            data={chartData}
+            title="SIP Investment Growth"
+            description="Your investment journey over time"
+          /> */}
+        </div>
+      </section>
+    </>
+  );
+}
