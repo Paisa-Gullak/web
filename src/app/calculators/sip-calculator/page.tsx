@@ -1,4 +1,4 @@
-import SipCalc from "../../../components/sip-calc";
+import SipCalc from "@/components/sip-calc";
 
 export default function SipCalculator() {
   return (
