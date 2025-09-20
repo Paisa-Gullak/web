@@ -4,7 +4,7 @@ import { useState } from "react";
 import InputSlider from "./inputSlider";
 import { IconCurrencyRupee, IconRefresh } from "@tabler/icons-react";
 import { formatINR } from "@/lib/currencyFormatter";
-import { set } from "better-auth";
+import { ChartAreaGradient } from "./ui/area-chart-gradient";
 
 export default function StpCalc() {
   const [investedAmt, setInvestedAmt] = useState<number>(3000000);
@@ -28,7 +28,7 @@ export default function StpCalc() {
     const r2 = destExpectedRoi / 100 / 12;
     const t = tenure * 12;
 
-    // Claculate No. of Transfers
+    // Calculation of No. of Transfers
     const actualTransfer = Math.min(t, Math.floor(P / T));
     const n = actualTransfer;
 
@@ -49,15 +49,62 @@ export default function StpCalc() {
     const totalFinalValue = sourceFinalValue + destinationFinalValue;
 
     return {
-      investedAmount: Math.floor(P),
+      totalInvestedAmount: Math.floor(P),
       sourceFundValue: Math.floor(sourceFinalValue),
       amountTransfered: Math.floor(destinationFinalValue),
       totalValue: Math.floor(totalFinalValue),
     };
   };
 
-  const { investedAmount, sourceFundValue, amountTransfered, totalValue } =
+  const { totalInvestedAmount, sourceFundValue, amountTransfered, totalValue } =
     calculateSTP();
+
+  const generateChartData = () => {
+    const P = investedAmt;
+    const r1 = sourceExpectedRoi / 100 / 12;
+    const T = transferAmt;
+    const r2 = destExpectedRoi / 100 / 12;
+
+    const data = [];
+
+    for (let year = 1; year <= tenure; year++) {
+      const months = year * 12;
+
+      // Calculation of Actual No. of Transfers
+      const actualTransfer = Math.min(months, Math.floor(P / T));
+      const n = actualTransfer;
+
+      // Calculation for source Fund
+      const sourceInitial = P * Math.pow(1 + r1, months);
+      let sourceFinal = 0;
+      for (let i = 1; i <= n; i++) {
+        sourceFinal += T * Math.pow(1 + r1, months - i);
+      }
+
+      const sourceFinalValue = sourceInitial - sourceFinal;
+
+      // Calaculation of Destination Fund
+      let destinationFinalValue = 0;
+      for (let i = 1; i <= n; i++) {
+        destinationFinalValue += T * Math.pow(1 + r2, n - i);
+      }
+
+      // Total return
+      const totalReturn = sourceFinalValue + destinationFinalValue - P;
+      // Total Value
+      const totalFinalValue = sourceFinalValue + destinationFinalValue;
+
+      data.push({
+        year: `Yr ${year}`,
+        invested: Math.floor(P),
+        returns: Math.floor(totalReturn),
+        total: Math.floor(totalFinalValue),
+      });
+    }
+    return data;
+  };
+
+  const chartData = generateChartData();
 
   return (
     <>
@@ -154,7 +201,7 @@ export default function StpCalc() {
                   <IconCurrencyRupee size={24} />
                 </span>
                 <span className="overflow-x-scroll scrollbar-hide">
-                  {formatINR(investedAmount)}
+                  {formatINR(totalInvestedAmount)}
                 </span>
               </div>
             </div>
@@ -198,11 +245,11 @@ export default function StpCalc() {
               </div>
             </div>
           </div>
-          {/* <ChartAreaGradient
+          <ChartAreaGradient
             data={chartData}
-            title="SIP Investment Growth"
+            title="STP Investment Growth"
             description="Your investment journey over time"
-          /> */}
+          />
         </div>
       </section>
     </>
