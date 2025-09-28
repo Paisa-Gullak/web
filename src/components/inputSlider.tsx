@@ -50,7 +50,7 @@ export default function InputSlider({
       } else if (String(symbol).length === 2) {
         return "pr-8";
       } else {
-        return "pr-12";
+        return "pr-14";
       }
     }
 

@@ -110,11 +110,11 @@ export default function StpCalc() {
     <>
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-auto">
         {/* Calculator */}
-        <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5 ">
+        <div className="bg-white rounded-xl shadow-xs space-y-3 py-10 px-5">
           <div className="mb-6">
-            <h1 className="text-lg font-semibold text-paisa-blue mb-5">
+            <span className="inline-flex items-center text-lg font-semibold text-paisa-blue mb-10  px-4 py-1 rounded-lg shadow-md shadow-paisa-gold">
               Source Fund
-            </h1>
+            </span>
             <InputSlider
               width={180}
               label="Invested Amount"
@@ -140,9 +140,9 @@ export default function StpCalc() {
           </div>
           <hr className="my-6" />
           <div>
-            <h1 className="text-lg font-semibold text-paisa-blue mb-5">
+            <span className="inline-flex items-center text-lg font-semibold text-paisa-blue mb-10  px-4 py-1 rounded-lg shadow-md shadow-paisa-gold">
               Destination Fund
-            </h1>
+            </span>
             <InputSlider
               width={150}
               label="Transfer Amount per month"
