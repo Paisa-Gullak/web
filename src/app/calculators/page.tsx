@@ -6,6 +6,7 @@ import {
   IconAlertTriangle,
   IconWallet,
   IconSwitchHorizontal,
+  IconHeartbeat,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -64,6 +65,15 @@ export default function CalculatorsPage() {
         "Transfer your investments smartly and reduce market risk. Our STP Calculator helps you plan smooth and disciplined fund transfers for better growth.",
       link: "/calculators/stp-calculator",
       linkText: "Grow with Stability",
+    },
+    {
+      id: 7,
+      icon: <IconHeartbeat className="text-paisa-gold" size={24} />,
+      title: "HLV Calculator",
+      description:
+        "Discover your true financial worth with our Human Life Value (HLV) Calculator. Estimate your lifetime earning potential and the protection your loved ones deserve. Take charge of your future and secure your family’s peace of mind — today.",
+      link: "/calculators/human-life-value-calculator",
+      linkText: "Know My Life Value",
     },
   ];
 
