@@ -1,6 +1,5 @@
 "use client";
 
-
 import { authClient } from "@/server/auth/client";
 
 export default function SignIn() {
