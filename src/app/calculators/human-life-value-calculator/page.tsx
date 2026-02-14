@@ -24,7 +24,7 @@ export default function LumpsumCalculator() {
         {/* Calculator */}
         <h1 className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 text-paisa-cream text-2xl font-semibold">
           <span className="bg-paisa-blue p-3 rounded-lg">
-            NOTE: Calculator is under development
+            NOTE: Calculator is under development!
           </span>
         </h1>
       </section>
