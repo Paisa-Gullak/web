@@ -16,7 +16,7 @@ export default function SignIn() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
+    <main className="flex flex-col items-center justify-center">
       {session ? (
         <>
           <div className="btn-primary p-1">
