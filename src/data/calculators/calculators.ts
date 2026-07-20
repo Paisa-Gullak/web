@@ -8,7 +8,7 @@ import SWPCalc from "@/components/swp-calc";
 export const calculators = {
   "sip-calculator": {
     title: "SIP Calculator",
-    fullform: "Systematic Investment Plan",
+    fullform: "(Systematic Investment Plan)",
     subTitle: "Plan Your Mutual Fund Investments",
     description:
       "Use our free SIP Calculator to estimate returns, track growth, and plan your mutual fund investments with ease.",
@@ -24,7 +24,7 @@ export const calculators = {
   },
   "stp-calculator": {
     title: "STP Calculator",
-    fullform: "Systematic Investment Plan",
+    fullform: "(Systematic Investment Plan)",
     subTitle: "Grow wealth step by step with systematic fund transfers",
     description:
       "The Systematic Transfer Plan (STP) Calculator helps you move investments from one fund to another at regular intervals. Enter your amount, transfer value, expected return, and time period to see invested capital, transfers, and maturity value. Plan smarter to balance risk and maximize long-term returns.",
@@ -32,7 +32,7 @@ export const calculators = {
   },
   "swp-calculator": {
     title: "SWP Calculator",
-    fullform: "Systematic Withdrawl Plan",
+    fullform: "(Systematic Withdrawl Plan)",
     subTitle: "Turn investments into steady income",
     description:
       "Plan smart withdrawals with our SWP Calculator. Track payouts, growth, and investment balance instantly.",
@@ -56,7 +56,7 @@ export const calculators = {
   },
   "human-life-value-calculator": {
     title: "HLV Calculator",
-    fullform: "Human Life Value",
+    fullform: "(Human Life Value)",
     subTitle: "Human Life Value Calculator - Know Your True Financial Worth",
     description:
       "The Human Life Value (HLV) Calculator helps you determine the ideal life insurance amount needed to safeguard your family's future. By analyzing your income potential, living expenses, outstanding debts, and years until retirement, our HLV calculation tool provides a scientifically-backed coverage recommendation. Don't leave your family's financial security to chance - calculate your human life value free online and get the right protection today.",
